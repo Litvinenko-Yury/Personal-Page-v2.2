@@ -1,5 +1,8 @@
+/*анимация прозрачости для .homepage*/
+// время подобрано так, чтобы эта анимация происходила ПОСЛЕ анимации для текста "slide-out-fwd-center"
+
 .anim-opacity {
-  animation: anim-opacity 0.2s linear 3.1s both;
+  animation: anim-opacity 0.2s linear 3s both;
 }
 
 /**
