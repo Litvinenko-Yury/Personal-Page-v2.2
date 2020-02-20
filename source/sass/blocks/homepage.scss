@@ -1,0 +1,15 @@
+.homepage {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+}
+
+.homepage__wrap {
+  display: block;
+  width: 75%;
+}

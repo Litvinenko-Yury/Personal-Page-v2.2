@@ -1,34 +1,37 @@
+/* roboto-300 - cyrillic_latin */
 @font-face {
-  font-family: "Open Sans";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local("Open Sans Light"),
-  local("OpenSans-Light"),
-  url("../fonts/opensanslight.woff2") format("woff2"),
-  url("../fonts/opensanslight.woff") format("woff");
+  src: local("Roboto Light"),
+    local("Roboto-Light"),
+    url("../fonts/roboto-v20-cyrillic_latin-300.woff2") format("woff2"),
+    url("../fonts/roboto-v20-cyrillic_latin-300.woff") format("woff");
 }
 
+/* roboto-400 - cyrillic_latin */
 @font-face {
-  font-family: "Open Sans";
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Open Sans Regular"),
-  local("OpenSans-Regular"),
-  url("../fonts/opensans.woff2") format("woff2"),
-  url("../fonts/opensans.woff") format("woff");
+  src: local("Roboto"),
+    local("Roboto-Regular"),
+    url("../fonts/roboto-v20-cyrillic_latin-regular.woff2") format("woff2"),
+    url("../fonts/roboto-v20-cyrillic_latin-regular.woff") format("woff");
 }
 
+/* roboto-500 - cyrillic_latin */
 @font-face {
-  font-family: "Open Sans";
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   font-display: swap;
-  src: local("Open Sans Bold"),
-  local("OpenSans-Bold"),
-  url("../fonts/opensansbold.woff2") format("woff2"),
-  url("../fonts/opensansbold.woff") format("woff");
+  src: local("Roboto Medium"),
+    local("Roboto-Medium"),
+    url("../fonts/roboto-v20-cyrillic_latin-500.woff2") format("woff2"),
+    url("../fonts/roboto-v20-cyrillic_latin-500.woff") format("woff");
 }
 
 html {
@@ -46,10 +49,10 @@ body {
   min-width: 320px;
   margin: 0;
   font-family: $font-family;
-  font-size: $font-size;
-  font-weight: normal;
-  line-height: $line-height;
-  color: $text-color;
+  //font-size: $font-size;
+  font-weight: 400;
+  //line-height: $line-height;
+  //color: $text-color;
 }
 
 img {
@@ -72,22 +75,22 @@ p {
 }
 
 h1 {
-  font-size: $font-size-h1;
+  //font-size: $font-size-h1;
   //font-weight: 300;
 }
 
 h2 {
   font-size: $font-size-h2;
-  //font-weight: 300;
+  font-weight: 400;
 }
 
 h3 {
-  font-size: $font-size-h3;
+  //font-size: $font-size-h3;
   //font-weight: 700;
 }
 
 h4 {
-  font-size: $font-size-h4;
+ // font-size: $font-size-h4;
   //font-weight: 700;
 }
 

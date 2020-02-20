@@ -1,0 +1,21 @@
+.anim-opacity {
+  animation: anim-opacity 0.2s linear 4.8s both;
+}
+
+/**
+ * ----------------------------------------
+ * animation anim-opacity
+ * ----------------------------------------
+ */
+@keyframes anim-opacity {
+  0% {
+    opacity: 1;
+    transition: visibility;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility;
+  }
+}

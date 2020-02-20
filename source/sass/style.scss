@@ -5,9 +5,14 @@
 //@import "blocks/mixins.scss";
 //===
 // импорт остальных блоков
+@import "blocks/anim-opacity.scss";
 @import "blocks/btn.scss";
+@import "blocks/contact.scss";
+@import "blocks/homepage.scss";
 @import "blocks/logo.scss";
 @import "blocks/main-nav.scss";
+@import "blocks/me.scss";
 @import "blocks/page-footer.scss";
 @import "blocks/page-header.scss";
 @import "blocks/page-main.scss";
+@import "blocks/slide-out-fwd-center.scss";

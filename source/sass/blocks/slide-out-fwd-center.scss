@@ -1,0 +1,20 @@
+.slide-out-fwd-center {
+  animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 4s both;
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-out-fwd-center
+ * ----------------------------------------
+ */
+@keyframes slide-out-fwd-center {
+  0% {
+    transform: translateZ(1);
+    //opacity: 1;
+  }
+
+  100% {
+    transform: perspective(100px) translateZ(600px);
+    //opacity: 0;
+  }
+}
