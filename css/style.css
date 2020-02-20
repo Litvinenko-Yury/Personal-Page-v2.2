@@ -390,8 +390,8 @@ blockquote {
 
 /*анимация прозрачости для .homepage*/
 .anim-opacity {
-  -webkit-animation: anim-opacity 0.2s linear 3s both;
-          animation: anim-opacity 0.2s linear 3s both; }
+  -webkit-animation: anim-opacity 0.2s linear 3.15s both;
+          animation: anim-opacity 0.2s linear 3.15s both; }
 
 /**
  * ----------------------------------------
