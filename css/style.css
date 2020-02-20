@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -387,9 +388,10 @@ blockquote {
   clip: rect(0 0 0 0);
   overflow: hidden; }
 
+/*анимация прозрачости для .homepage*/
 .anim-opacity {
-  -webkit-animation: anim-opacity 0.2s linear 3.1s both;
-          animation: anim-opacity 0.2s linear 3.1s both; }
+  -webkit-animation: anim-opacity 0.2s linear 3s both;
+          animation: anim-opacity 0.2s linear 3s both; }
 
 /**
  * ----------------------------------------
@@ -494,6 +496,7 @@ blockquote {
 .page-header {
   margin: 0 auto; }
 
+/*анимация движения текста по оси Z*/
 .slide-out-fwd-center {
   -webkit-animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both;
           animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both; }
