@@ -24,7 +24,6 @@ const path = require('path');
 //копируем папки из папки source в папку build.
 gulp.task("copyFolderBuild", function () {
   return gulp.src([
-    "source/audio/**",
     "source/favicons/**",
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
