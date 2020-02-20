@@ -388,8 +388,8 @@ blockquote {
   overflow: hidden; }
 
 .anim-opacity {
-  -webkit-animation: anim-opacity 0.2s linear 4.8s both;
-          animation: anim-opacity 0.2s linear 4.8s both; }
+  -webkit-animation: anim-opacity 0.2s linear 3.1s both;
+          animation: anim-opacity 0.2s linear 3.1s both; }
 
 /**
  * ----------------------------------------
@@ -495,8 +495,8 @@ blockquote {
   margin: 0 auto; }
 
 .slide-out-fwd-center {
-  -webkit-animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 4s both;
-          animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 4s both; }
+  -webkit-animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both;
+          animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both; }
 
 /**
  * ----------------------------------------
