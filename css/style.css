@@ -485,7 +485,8 @@ blockquote {
   .contact__header-wrap:hover .contact__header {
     color: #3d3d3d; }
   .contact__header-wrap--width {
-    width: 50%; }
+    width: 50%;
+    background-color: #3d3d3d; }
 
 .contact__header {
   outline: 1px dotted coral;
