@@ -1,16 +1,39 @@
 "use strict";
-var navMain = document.querySelector('.main-nav');
-var navToggle = document.querySelector('.main-nav__inner-toggle');
 
-/*если JS есть, показать кнопку "откр/закр" меню*/
-navMain.classList.remove('main-nav--nojs');
+let me = document.querySelector('.me');
+let contact = document.querySelector('.contact');
+let contactHeaderWrap = document.querySelector('.contact__header-wrap');
+let contactHeader = document.querySelector('.contact__header');
+let contactListWrap = document.querySelector('.contact__list-wrap');
 
-navToggle.addEventListener('click', function () {
-  if (navMain.classList.contains('main-nav--closed')) {
-    navMain.classList.remove('main-nav--closed');
-    navMain.classList.add('main-nav--opened');
+
+contactHeaderWrap.addEventListener('click', function () {
+  me.classList.toggle('me--none');
+  contact.classList.toggle('contact--width');
+  contactHeaderWrap.classList.toggle('contact__header-wrap--width');
+  contactListWrap.classList.toggle('contact__list-wrap--width');
+});
+
+contactHeaderWrap.addEventListener('mouseover', function () {
+  if (contactHeaderWrap.classList.contains('contact__header-wrap--width') === true) {
+    addBACK();
   } else {
-    navMain.classList.remove('main-nav--opened');
-    navMain.classList.add('main-nav--closed');
+    addCONTACT();
   }
 });
+
+contactHeaderWrap.addEventListener('mouseout', function () {
+  if (contactHeaderWrap.classList.contains('contact__header-wrap--width') === true) {
+    addCONTACT();
+  } else {
+    addCONTACT();
+  }
+});
+
+function addBACK() {
+  contactHeader.innerHTML = "BACK";
+};
+
+function addCONTACT() {
+  contactHeader.innerHTML = "CONTACT";
+};
