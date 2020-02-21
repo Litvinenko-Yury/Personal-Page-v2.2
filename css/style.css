@@ -419,85 +419,8 @@ blockquote {
     -webkit-transition: visibility;
     transition: visibility; } }
 
-.contact {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50vw;
-  height: 100vh;
-  border-right: 1px solid #e1e1e1;
-  background: #2c2c2c;
-  cursor: pointer; }
-  .contact:hover {
-    background-color: #e1e1e1; }
-  .contact:hover .contact__link {
-    color: #3d3d3d; }
-
-.contact__link {
-  color: #e1e1e1; }
-
-.homepage {
-  position: fixed;
-  z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: #ffffff; }
-
-.homepage__wrap {
-  display: block;
-  width: 75%; }
-
-.me {
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 50vw;
-  height: 100vh;
-  background: #2c2c2c;
-  cursor: pointer; }
-  .me:hover {
-    background-color: #e1e1e1; }
-  .me:hover .me__link {
-    color: #3d3d3d; }
-
-.me__link {
-  color: #e1e1e1; }
-
-.page-footer {
-  margin: 0 auto; }
-
-.page-header {
-  margin: 0 auto; }
-
 /*анимация движения текста по оси Z*/
-.slide-out-fwd-center {
+.anim-slide-out {
   -webkit-animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both;
           animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 2.5s both; }
 
@@ -520,3 +443,108 @@ blockquote {
   100% {
     -webkit-transform: perspective(100px) translateZ(600px);
             transform: perspective(100px) translateZ(600px); } }
+
+.contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  width: 50%;
+  height: 100vh;
+  border-right: 1px solid #e1e1e1;
+  background: #2c2c2c;
+  cursor: pointer;
+  /*!!!!=======*/
+  /*=======*/ }
+  .contact--width {
+    width: 100%; }
+
+.contact__header-wrap {
+  outline: 1px dotted coral;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  /*!!!=======*/
+  /*=======*/ }
+  .contact__header-wrap:hover {
+    background-color: #e1e1e1; }
+  .contact__header-wrap:hover .contact__header {
+    color: #3d3d3d; }
+  .contact__header-wrap--width {
+    width: 50%; }
+
+.contact__header {
+  outline: 1px dotted coral;
+  text-transform: uppercase;
+  color: #e1e1e1; }
+
+.contact__list-wrap {
+  outline: 1px dotted coral;
+  color: #e1e1e1;
+  display: none;
+  width: 0;
+  /*!!!!=======*/
+  /*==========*/ }
+  .contact__list-wrap:hover {
+    background-color: #e1e1e1; }
+  .contact__list-wrap:hover span {
+    color: #3d3d3d; }
+  .contact__list-wrap--width {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%; }
+
+.me {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  height: 100vh;
+  background: #2c2c2c;
+  cursor: pointer;
+  /*=========*/
+  /*=========*/ }
+  .me--none {
+    width: 0;
+    display: none; }
+
+.me__header {
+  outline: 1px dotted coral;
+  width: 100%;
+  text-align: center; }
+
+.me__link {
+  color: #e1e1e1; }
+
+.page-footer {
+  margin: 0 auto; }
+
+.page-header {
+  margin: 0 auto; }
