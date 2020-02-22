@@ -4,8 +4,6 @@
   left: 0;
   display: flex;
   flex-direction: row-reverse;
-  // justify-content: center;
-  //align-items: center;/
 
   width: 50%;
   height: 100vh;
@@ -18,13 +16,12 @@
   /*!!!!=======*/
   &--width {
     width: 100%;
+    border-right: none;
   }
   /*=======*/
 }
 
 .contact__header-wrap {
-  outline: 1px dotted coral;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,20 +53,10 @@
 }
 
 .contact__list-wrap {
-  outline: 1px dotted coral;
-
-  color: #e1e1e1;
-
   display: none;
   width: 0;
 
-  // &:hover {
-  //   background-color: #e1e1e1;
-  // }
-
-  // &:hover span {
-  //   color: #3d3d3d;
-  // }
+  color: #e1e1e1;
 
   /*!!!!=======*/
   &--width {
@@ -91,20 +78,24 @@
   margin: 0;
   padding-left: 0;
   list-style: none;
+
+  border-right: 1px solid #525252;
 }
 
 .contact__item {
-  outline: 1px dotted coral;
-
   display: flex;
   height: 20%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #525252;
+  }
 }
 
 .contact__link {
   width: 100%;
   height: 100%;
 
-  font-size: 48px;
+  font-size: 42px;
   line-height: 201.6px;
   text-align: center;
   color: #e1e1e1;
