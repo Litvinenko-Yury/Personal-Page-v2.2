@@ -3,7 +3,6 @@
   top: 0;
   right: 0;
   display: flex;
-  //justify-content: center;
   align-items: center;
 
   width: 50%;
@@ -12,6 +11,12 @@
   cursor: pointer;
 
   /*=========*/
+  &--width {
+    //добавляет скрипт
+    width: 100%;
+    border-right: none;
+  }
+
   &--none {
     //добавляет скрипт
     width: 0;
@@ -20,13 +25,104 @@
   /*=========*/
 }
 
+.me__header-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    background-color: #e1e1e1;
+  }
+
+  &:hover .me__header {
+    color: #3d3d3d;
+  }
+
+  /*!!!=======*/
+  &--width {
+    width: 50%;
+    background-color: #3d3d3d;
+  }
+  /*=======*/
+}
+
 .me__header {
   outline: 1px dotted coral;
 
+  text-transform: uppercase;
+  color: #e1e1e1;
+}
+
+.me__list-wrap {
+  display: none;
+  width: 0;
+  height: 100%;
+
+  color: #e1e1e1;
+
+  /*!!!!=======*/
+  &--width {
+    display: flex !important; /* stylelint-disable-line */
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+  }
+  /*==========*/
+}
+
+.me__list {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  text-align: center;
+  height: 100%;
+
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  border-left: 1px solid #525252;
+}
+
+.me__item {
+  display: flex;
+  height: 33.33333%;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #525252;
+  }
 }
 
 .me__link {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 42px;
+  text-transform: uppercase;
+  color: #e1e1e1;
+
+  &:hover {
+    background-color: #e1e1e1;
+    color: #3d3d3d;
+  }
+
+  &:hover .contact__content {
+    background-color: #e1e1e1;
+    color: #3d3d3d;
+  }
+
+  &--no-pointer {
+    cursor: auto;
+  }
+}
+
+.me__content {
   color: #e1e1e1;
 }

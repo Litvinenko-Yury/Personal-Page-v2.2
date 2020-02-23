@@ -7,18 +7,23 @@
 
   width: 50%;
   height: 100vh;
-
   border-right: 1px solid #e1e1e1;
   background: #2c2c2c;
-
   cursor: pointer;
 
   /*!!!!=======*/
   &--width {
+    //добавляет скрипт
     width: 100%;
     border-right: none;
   }
-  /*=======*/
+
+  &--none {
+    //добавляет скрипт
+    width: 0;
+    display: none;
+  }
+  /*=========*/
 }
 
 .contact__header-wrap {
@@ -60,7 +65,7 @@
 
   /*!!!!=======*/
   &--width {
-    display: flex !important;
+    display: flex !important; /* stylelint-disable-line */
     justify-content: center;
     align-items: center;
 
@@ -95,9 +100,11 @@
   width: 100%;
   height: 100%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 42px;
-  line-height: 201.6px;
-  text-align: center;
   color: #e1e1e1;
 
   &:hover {
