@@ -1,0 +1,82 @@
+.skills {
+  border-bottom: 10px solid darkmagenta;
+
+  //display: none;
+  //width: 0;
+  min-height: 100%;
+
+  color: #e1e1e1;
+
+  // @media (min-width: $tablet-width) {
+  //   width: 620px;
+  //   margin: 0 auto;
+  //   margin-bottom: 70px;
+  // }
+
+  // @media (min-width: $desktop-width) {
+  //   width: 920px;
+  // }
+}
+
+.skills__list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+
+  // @media (min-width: $mob-xs-width) {
+  //   column-count: 2;
+  //   column-gap: 5%;
+  // }
+
+  // @media (min-width: $desktop-width) {
+  //   column-count: 3;
+  //   column-gap: 5%;
+  // }
+}
+
+.skills__list-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  &--ok {
+    position: relative;
+
+    ::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 0;
+      width: 10px;
+      height: 2px;
+      transform: rotate(45deg);
+      background: $color-second;
+    }
+
+    ::after {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 5px;
+      width: 15px;
+      height: 2px;
+      transform: rotate(-45deg);
+      background: $color-second;
+    }
+  }
+}
+
+.skills__list-item-svg {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  margin-top: 5px;
+  margin-right: 15px;
+  fill: $color-second;
+
+  &--mr {
+    margin-right: 10px;
+  }
+}
