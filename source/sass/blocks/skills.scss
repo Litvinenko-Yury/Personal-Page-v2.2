@@ -1,11 +1,9 @@
 .skills {
-  border-bottom: 10px solid darkmagenta;
-
-  //display: none;
-  //width: 0;
   min-height: 100%;
+  padding: 3em;
 
-  color: #e1e1e1;
+  color: $text-color;
+  border-bottom: 1px solid #525252;
 
   // @media (min-width: $tablet-width) {
   //   width: 620px;
@@ -28,16 +26,16 @@
   //   column-gap: 5%;
   // }
 
-  // @media (min-width: $desktop-width) {
-  //   column-count: 3;
-  //   column-gap: 5%;
-  // }
+  @media (min-width: $desktop-width) {
+    column-count: 2;
+    column-gap: 5%;
+  }
 }
 
 .skills__list-item {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 15px;
+  //align-items: flex-start;
+  margin-bottom: 1em;
   overflow: hidden;
 
   &--ok {
@@ -72,8 +70,8 @@
   flex-grow: 0;
   flex-shrink: 0;
 
-  margin-top: 5px;
-  margin-right: 15px;
+  //margin-top: 5px;
+  margin-right: 1em;
   fill: $color-second;
 
   &--mr {

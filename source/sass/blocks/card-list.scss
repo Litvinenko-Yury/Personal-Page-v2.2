@@ -1,11 +1,9 @@
 .cards-list {
-  border-bottom: 10px solid darkmagenta;
-
-  //display: none;
-  //width: 0;
   min-height: 100%;
+  padding: 3em 7em;
 
-  color: #e1e1e1;
+  color: $text-color;
+  border-bottom: 1px solid #525252;
 
   // @media (min-width: $tablet-width) {
   //   width: 620px;
@@ -19,9 +17,9 @@
 }
 
 .cards-list__wrapper {
-  // @media (min-width: $tablet-width) {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   justify-content: space-between;
-  // }
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }

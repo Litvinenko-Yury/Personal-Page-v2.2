@@ -146,7 +146,7 @@ meLinkCard.addEventListener('click', function () {
   if (this.innerHTML === 'BACK') {
     hideMeWrapper();
     this.classList.remove('me__link--active'); //удалить .me__link--active
-    this.innerHTML = 'PORTFOLIO'; //изменить BACK на Work
+    this.innerHTML = 'WORK'; //изменить BACK на Work
   }
 });
 
@@ -160,7 +160,7 @@ meLinkCard.addEventListener('mouseover', function () {
 //изменить содержимое на PORTFILIO
 meLinkCard.addEventListener('mouseout', function () {
   if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "PORTFILIO";
+    this.innerHTML = "WORK";
   }
 });
 

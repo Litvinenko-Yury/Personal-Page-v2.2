@@ -1,0 +1,26 @@
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  margin-bottom: 1em;
+  line-height: 1em;
+
+  // &--card {
+  //   justify-content: center;
+  //   margin-top: 30px;
+  //   font-size: $font-size-h1;
+  // }
+
+  // &--card-contact {
+  //   text-align: center;
+  //   text-transform: uppercase;
+  // }
+
+  & svg {
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.7em;
+    fill: $color-second;
+  }
+}

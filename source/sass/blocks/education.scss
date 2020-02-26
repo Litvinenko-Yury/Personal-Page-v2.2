@@ -1,9 +1,8 @@
 .education {
-  //display: none;
-  //width: 0;
   min-height: 100%;
+  padding: 3em 7em;
 
-  color: #e1e1e1;
+  color: $text-color;
 
   // @media (min-width: $tablet-width) {
   //   width: 620px;
@@ -21,17 +20,18 @@
 .education__link {
   display: block;
   margin-bottom: 35px;
+  font-weight: 300;
   text-decoration: underline;
-  //color: $link-color;
+  color: $link-color;
 
-  // &:hover,
-  // &:focus {
-  //   color: $link-color--hover;
-  // }
+  &:hover,
+  &:focus {
+    color: $link-color--hover;
+  }
 
-  // &:active {
-  //   color: $link-color--down;
-  // }
+  &:active {
+    color: $link-color--down;
+  }
 }
 
 .education__img-wrap {

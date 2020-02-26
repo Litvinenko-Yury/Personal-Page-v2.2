@@ -6,8 +6,8 @@ $font-family: "Roboto", "Arial", sans-serif;
 
 //$font-size-h1: px;
 $font-size-h2: 5em;
-//$font-size-h3: px;
-//$font-size-h4: px;
+$font-size-h3: 2em;
+$font-size-h4: 1.25em;
 //$font-size-h5: px;
 //$font-size-h6: px;
 
@@ -15,7 +15,7 @@ $font-size-h2: 5em;
 //$font-size--x-large: px;
 //$font-size--large: px;
 //$font-size--larger: px;
-//$font-size: px;
+$font-size: 18px;
 //$font-size--smaller: px;
 //$font-size--small: px;
 
@@ -52,7 +52,7 @@ $color-second: #00dbe1;
 //$gray--darkenest: ;
 //$gray--darkest: ;
 
-//$text-color: ; // Global text color on <body>;
+$text-color: #e1e1e1; // Global text color on <body>;
 
 //=============================
 //===Components===
@@ -62,11 +62,16 @@ $color-second: #00dbe1;
 //$padding-base-vertical: px;
 //$padding-base-horizontal: px;
 
-//$border-radius-base: px;
+//$border-radius-base: 5px;
+//$border-radius-desk: 8px;
 
 //=============================
 //===Links====
 //=============================
+
+$link-color: #e1e1e1;
+$link-color--hover: #00f5ff;
+$link-color--down: #009399;
 //$link-color: ;
 ///$link-color--hover: ;
 //$link-color--focus: ;
@@ -123,8 +128,8 @@ $color-second: #00dbe1;
 //=============================
 //===Media queries breakpoints===
 //=============================
-//$tablet-width: 660px;
-//$desktop-width: 960px;
+$tablet-width: 660px;
+$desktop-width: 960px;
 
 //=============================
 //===Retina queries breakpoints===
@@ -135,4 +140,4 @@ $color-second: #00dbe1;
 //=============================
 //===Animate===
 //=============================
-//$transition-time ;
+$transition-time: 0.2s;
