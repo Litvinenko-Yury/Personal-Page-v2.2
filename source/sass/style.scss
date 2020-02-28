@@ -2,9 +2,10 @@
 @import "variables.scss";
 //===
 @import "blocks/global.scss";
-//@import "blocks/mixins.scss";
+@import "blocks/mixins.scss";
 //===
 // импорт остальных блоков
+@import "blocks/about.scss";
 @import "blocks/anim-opacity.scss";
 @import "blocks/anim-slide-out.scss";
 @import "blocks/btn.scss";
@@ -12,7 +13,9 @@
 @import "blocks/card.scss";
 @import "blocks/contact.scss";
 @import "blocks/education.scss";
-//@import "blocks/homepage.scss";
+@import "blocks/homepage.scss";
 @import "blocks/me.scss";
+@import "blocks/modal-overlay.scss";
+@import "blocks/modal.scss";
 @import "blocks/skills.scss";
 @import "blocks/title.scss";

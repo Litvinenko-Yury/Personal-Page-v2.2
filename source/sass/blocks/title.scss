@@ -18,10 +18,17 @@
   //   text-transform: uppercase;
   // }
 
-  & svg {
-    width: 0.8em;
-    height: 0.8em;
-    margin-right: 0.7em;
-    fill: $color-second;
-  }
+  // & svg {
+  //   width: 0.8em;
+  //   height: 0.8em;
+  //   margin-right: 0.7em;
+  //   fill: $text-color;
+  // }
+}
+
+.title__title-svg {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.7em;
+  fill: $text-color;
 }

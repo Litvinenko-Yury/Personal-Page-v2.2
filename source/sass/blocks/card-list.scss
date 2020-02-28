@@ -1,5 +1,7 @@
 .cards-list {
-  min-height: 100%;
+  @include scrollbar;
+
+  height: 100%;
   padding: 3em 7em;
 
   color: $text-color;

@@ -1,0 +1,38 @@
+.about {
+  margin-bottom: 2em;
+}
+
+.about__title {
+  font-size: 4em;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.about__img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  margin-top: 1em;
+  object-fit: cover;
+  font-family: "object-fit: contain;"; /* stylelint-disable-line */
+  border-radius: 50%;
+  filter: sepia(100%) brightness(80%);
+}
+
+.about__descr {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 1em;
+  font-size: 1.5em;
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    width: 400px;
+  }
+}
+
+.about__descr-color {
+  color: $color-second;
+}

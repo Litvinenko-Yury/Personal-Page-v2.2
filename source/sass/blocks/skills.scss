@@ -1,4 +1,6 @@
 .skills {
+  @include scrollbar;
+
   min-height: 100%;
   padding: 3em;
 
@@ -34,7 +36,6 @@
 
 .skills__list-item {
   display: flex;
-  //align-items: flex-start;
   margin-bottom: 1em;
   overflow: hidden;
 
@@ -49,7 +50,7 @@
       width: 10px;
       height: 2px;
       transform: rotate(45deg);
-      background: $color-second;
+      background: $text-color;
     }
 
     ::after {
@@ -60,7 +61,7 @@
       width: 15px;
       height: 2px;
       transform: rotate(-45deg);
-      background: $color-second;
+      background: $text-color;
     }
   }
 }
@@ -70,11 +71,17 @@
   flex-grow: 0;
   flex-shrink: 0;
 
-  //margin-top: 5px;
+  width: 24px;
+  height: 24px;
+
   margin-right: 1em;
-  fill: $color-second;
+  fill: $text-color;
 
   &--mr {
-    margin-right: 10px;
+    margin-right: 17px;
   }
+}
+
+.skills__list-item-text {
+  font-size: 1.25em;
 }
