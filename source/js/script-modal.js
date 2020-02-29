@@ -21,7 +21,8 @@ function closeModal() {
   modalOverlay.classList.remove('modal-overlay--show');
 }
 
-
+/*Показать модальное окно:*/
+/*события по клику на img-preview*/
 eduImgWrap.onclick = function (event) {
   let target = event.target; // где был клик?
 
