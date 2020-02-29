@@ -1,0 +1,30 @@
+.modal-content {
+  display: block;
+  position: fixed;
+  z-index: 100;
+
+  left: 50%;
+  top: 50%;
+
+  width: auto;
+  height: 95vh;
+  cursor: pointer;
+
+  animation: scale-up-center 0.25s linear 0.3s both;
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+
+@keyframes scale-up-center {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
