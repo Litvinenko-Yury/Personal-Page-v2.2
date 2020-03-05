@@ -12,11 +12,9 @@
 @keyframes slide-out-fwd-center {
   0% {
     transform: translateZ(1);
-    //opacity: 1;
   }
 
   100% {
     transform: perspective(100px) translateZ(600px);
-    //opacity: 0;
   }
 }

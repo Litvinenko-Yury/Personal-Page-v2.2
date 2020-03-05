@@ -8,7 +8,6 @@ let modalOverlay = document.querySelector('.modal-overlay');
 /**===================== */
 function showModal() {
   modalOverlay.classList.add('modal-overlay--show');
-  //modal.classList.add('modal--show');
 }
 
 function showModalContent1() {
