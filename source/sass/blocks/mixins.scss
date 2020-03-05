@@ -12,3 +12,51 @@
     border-left: 1px solid #3d3d3d;
   }
 }
+
+@mixin width-from50-to100 {
+  @keyframes width-50-100 {
+    0% {
+      width: 50vw;
+    }
+
+    100% {
+      width: 100vw;
+    }
+  }
+}
+
+@mixin width-from100-to50 {
+  @keyframes width-100-50 {
+    0% {
+      width: 100vw;
+    }
+
+    100% {
+      width: 50vw;
+    }
+  }
+}
+
+@mixin width-from0-to50 {
+  @keyframes width-0-50 {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 50vw;
+    }
+  }
+}
+
+@mixin width-from50-to0 {
+  @keyframes width-50-0 {
+    0% {
+      width: 50vw;
+    }
+
+    100% {
+      width: 0;
+    }
+  }
+}

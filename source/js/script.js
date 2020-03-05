@@ -33,17 +33,37 @@ function addMeLeft() {
   meHeader.innerHTML = "ME";
 };
 
+/**!!!!!!==========*/
+/*ФУНКЦИЯ скрыть .me__header-wrap*/
+function hideMeHeaderWrap() {
+  meHeaderWrap.classList.remove('me__header-wrap--width-0-50');
+  meHeaderWrap.classList.add('me__header-wrap--width-50-0');
+}
+
+/*ФУНКЦИЯ показать .me__header-wrap*/
+function showMeHeaderWrap() {
+  meHeaderWrap.classList.remove('me__header-wrap--width-50-0');
+  meHeaderWrap.classList.add('me__header-wrap--width-0-50');
+}
+
+/*ФУНКЦИЯ показать .me__wrapper*/
 let meWrapper = me.querySelector('.me__wrapper');
 function showMeWrapper() {
-  meHeaderWrap.classList.add('me__header-wrap--none'); //скрыть .me
+  meWrapper.classList.add('me__wrapper--width-0-50'); //показать .me__wrapper
   meList.classList.add('me__list--border'); // изменить border
-  meWrapper.classList.add('me__wrapper--width'); //показать .me__wrapper
 };
 
+/*ФУНКЦИЯ скрыть .me__wrapper*/
 function hideMeWrapper() {
-  meHeaderWrap.classList.remove('me__header-wrap--none'); //показать .me
+  meWrapper.classList.remove('me__wrapper--width-0-50');
+  meWrapper.classList.add('me__wrapper--width-50-0');
+
+  function removeMeWrapperWidth_50_0() {
+    meWrapper.classList.remove('me__wrapper--width-50-0');
+  }
+  setTimeout(removeMeWrapperWidth_50_0, 3000);
+
   meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
-  meWrapper.classList.remove('me__wrapper--width'); //скрыть .me__wrapper
 };
 
 function removeActive() {
@@ -52,18 +72,103 @@ function removeActive() {
   meLinkEdu.classList.remove('me__link--active'); //удалить .me__link--active для Edu
 };
 
+/*ФУНКЦИЯ клик на CONTACT*/
+function clickContactHeaderWrap() {
+  if (contact.classList.contains('contact--width-50-100')) {
+    // уменьшить ширину .contact
+    contact.classList.remove('contact--width-50-100');
+    contact.classList.add('contact--width-100-50');
+    function removeContactWidth_100_50() {
+      contact.classList.remove('contact--width-100-50');
+    }
+    setTimeout(removeContactWidth_100_50, 3000);
+
+    // уменьшить ширину .contact__list-wrap
+    contactListWrap.classList.remove('contact__list-wrap--width-0-50');
+    contactListWrap.classList.add('contact__list-wrap--width-50-0');
+    function removeContactListWrap_50_0() {
+      contactListWrap.classList.remove('contact__list-wrap--width-50-0');
+    }
+    setTimeout(removeContactListWrap_50_0, 3000);
+
+    // увеличить ширину .me
+    me.classList.remove('me--width-50-0')
+    me.style.display = "";
+    me.classList.add('me--width-0-50');
+    function removeMeWidth_0_50() {
+      me.classList.remove('me--width-0-50');
+    }
+    setTimeout(removeMeWidth_0_50, 3000);
+
+    // и удалить .active
+    contactHeaderWrap.classList.remove('active');
+
+  } else {
+    contact.classList.add('contact--width-50-100');
+    contactListWrap.classList.add('contact__list-wrap--width-0-50');
+    contactHeaderWrap.classList.add('active');
+
+    me.classList.add('me--width-50-0');
+    function addMeDisplayNone() {
+      me.style.display = "none";
+    };
+    setTimeout(addMeDisplayNone, 3000);
+  }
+}
+
+/*ФУНКЦИЯ клик на ME*/
+function clickMeHeaderWrap() {
+  if (me.classList.contains('me--width-50-100')) {
+    //уменьшить ширину .me
+    me.classList.remove('me--width-50-100');
+    me.classList.add('me--width-100-50');
+    function removeMeWidth_100_50() {
+      me.classList.remove('me--width-100-50');
+    }
+    setTimeout(removeMeWidth_100_50, 3000);
+
+    // уменьшить ширину .me__list-wrap
+    meListWrap.classList.remove('me__list-wrap--width-0-50');
+    meListWrap.classList.add('me__list-wrap--width-50-0');
+    function removeMeListWrap_50_0() {
+      meListWrap.classList.remove('me__list-wrap--width-50-0');
+    }
+    setTimeout(removeMeListWrap_50_0, 3000);
+
+    // увеличить ширину .contact
+    contact.classList.remove('contact--width-50-0');
+    contact.style.display = "";
+    contact.classList.add('contact--width-0-50');
+    function removeContactWidth_0_50() {
+      contact.classList.remove('contact--width-0-50');
+    }
+    setTimeout(removeContactWidth_0_50, 3000);
+
+    // удалить .active и модификатор &--width-0-50
+    meHeaderWrap.classList.remove('active');
+    meHeaderWrap.classList.remove('me__header-wrap--width-0-50');
+
+  } else {
+    me.classList.add('me--width-50-100');
+    meListWrap.classList.add('me__list-wrap--width-0-50');
+    meHeaderWrap.classList.add('active');
+
+    contact.classList.add('contact--width-50-0');
+    function addContactDisplayNone() {
+      contact.style.display = "none";
+    };
+    setTimeout(addContactDisplayNone, 3000);
+  }
+}
 
 /**======================= */
-/*===клик на CONTACT*/
+/*===клик на CONTACT (.contact__header-wrap)*/
 contactHeaderWrap.addEventListener('click', function () {
-  me.classList.toggle('me--none');
-  contact.classList.toggle('contact--width');
-  this.classList.toggle('contact__header-wrap--width');
-  contactListWrap.classList.toggle('contact__list-wrap--width');
+  clickContactHeaderWrap();
 });
 
 contactHeaderWrap.addEventListener('mouseover', function () {
-  if (this.classList.contains('contact__header-wrap--width')) {
+  if (this.classList.contains('active')) {
     addBackRight();
   } else {
     addContactRight();
@@ -71,9 +176,7 @@ contactHeaderWrap.addEventListener('mouseover', function () {
 });
 
 contactHeaderWrap.addEventListener('mouseout', function () {
-  if (this.classList.contains('contact__header-wrap--width')) {
-    addContactRight();
-  } else {
+  if (this.classList.contains('active')) {
     addContactRight();
   }
 });
@@ -81,14 +184,11 @@ contactHeaderWrap.addEventListener('mouseout', function () {
 /**======================= */
 /*===клик на ME*/
 meHeaderWrap.addEventListener('click', function () {
-  contact.classList.toggle('contact--none');
-  me.classList.toggle('me--width');
-  this.classList.toggle('me__header-wrap--width');
-  meListWrap.classList.toggle('me__list-wrap--width');
+  clickMeHeaderWrap();
 });
 
 meHeaderWrap.addEventListener('mouseover', function () {
-  if (this.classList.contains('me__header-wrap--width')) {
+  if (this.classList.contains('active')) {
     addBackleft();
   } else {
     addMeLeft();
@@ -96,9 +196,7 @@ meHeaderWrap.addEventListener('mouseover', function () {
 });
 
 meHeaderWrap.addEventListener('mouseout', function () {
-  if (this.classList.contains('me__header-wrap--width')) {
-    addMeLeft();
-  } else {
+  if (this.classList.contains('active')) {
     addMeLeft();
   }
 });
@@ -109,14 +207,17 @@ meHeaderWrap.addEventListener('mouseout', function () {
 let meLinkSkills = meList.querySelector('.me__link--skills');
 
 meLinkSkills.addEventListener('click', function () {
-  showMeWrapper();
-  removeActive();
-  this.classList.add('me__link--active'); //добавить .me__link--active
-
   if (this.innerHTML === 'BACK') {
     hideMeWrapper();
+    showMeHeaderWrap();
     this.classList.remove('me__link--active'); //удалить .me__link--active
     this.innerHTML = 'SKILLS'; //изменить BACK на SKILLS
+  } else {
+    hideMeHeaderWrap();
+    showMeWrapper();
+
+    removeActive();
+    this.classList.add('me__link--active'); //добавить .me__link--active
   }
 });
 
@@ -139,14 +240,17 @@ meLinkSkills.addEventListener('mouseout', function () {
 let meLinkCard = meList.querySelector('.me__link--card-list');
 
 meLinkCard.addEventListener('click', function () {
-  showMeWrapper();
-  removeActive();
-  this.classList.add('me__link--active'); //добавить .me__link--active
-
   if (this.innerHTML === 'BACK') {
     hideMeWrapper();
+    showMeHeaderWrap();
     this.classList.remove('me__link--active'); //удалить .me__link--active
     this.innerHTML = 'WORK'; //изменить BACK на Work
+  } else {
+    hideMeHeaderWrap();
+    showMeWrapper();
+
+    removeActive();
+    this.classList.add('me__link--active'); //добавить .me__link--active
   }
 });
 
@@ -169,14 +273,17 @@ meLinkCard.addEventListener('mouseout', function () {
 let meLinkEdu = meList.querySelector('.me__link--edu');
 
 meLinkEdu.addEventListener('click', function () {
-  showMeWrapper();
-  removeActive();
-  this.classList.add('me__link--active'); //добавить .me__link--active
-
   if (this.innerHTML === 'BACK') {
     hideMeWrapper();
+    showMeHeaderWrap();
     this.classList.remove('me__link--active'); //удалить .me__link--active
     this.innerHTML = 'Education'; //изменить BACK на Education
+  } else {
+    hideMeHeaderWrap();
+    showMeWrapper();
+
+    removeActive();
+    this.classList.add('me__link--active'); //добавить .me__link--active
   }
 });
 
@@ -187,7 +294,7 @@ meLinkEdu.addEventListener('mouseover', function () {
   }
 });
 
-//изменить содержимое на PORTFILIO
+//изменить содержимое на EDUCATION
 meLinkEdu.addEventListener('mouseout', function () {
   if (this.classList.contains('me__link--active') === true) {
     this.innerHTML = "EDUCATION";
