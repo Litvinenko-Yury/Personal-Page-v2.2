@@ -11,11 +11,11 @@ function showModal() {
 }
 
 function showModalContent1() {
-  modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/Sahara2.jpg' loading='lazy' alt='Certificate №1'>");
+  modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/img-certificate-1-1080@1x.jpg' loading='lazy' alt='Certificate №1'>");
 }
 
 function showModalContent2() {
-  modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/taiga.jpg' loading='lazy' alt='Certificate №1'>");
+  modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/img-certificate-2-1080@1x.jpg' loading='lazy' alt='Certificate №1'>");
 }
 
 function closeModal() {

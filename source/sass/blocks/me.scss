@@ -175,14 +175,19 @@
 }
 
 .me__wrapper {
-  display: none;
+  //display: none;
+  width: 0;
   height: 100%;
 
   color: $text-color;
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: hidden;
   cursor: default;
+
+  &--show {
+    width: 50vw;
+  }
 
   /*=======*/
   &--width-0-50 {

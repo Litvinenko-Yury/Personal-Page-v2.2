@@ -24,7 +24,7 @@
 }
 
 .card__img-wrap {
-  flex-grow: 3;
+  //flex-grow: 3;
 }
 
 .card__img {
@@ -43,7 +43,7 @@
   padding: 1.5em 1em;
 
   @media (min-width: $desktop-width) {
-    flex-basis: 13em;
+    flex-basis: 13rem;
     flex-shrink: 0;
   }
 }

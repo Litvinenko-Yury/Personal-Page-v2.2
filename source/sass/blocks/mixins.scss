@@ -1,4 +1,5 @@
 @mixin scrollbar {
+  height: 100%;
   overflow-y: auto;
 
   /*стилизация scrollbar*/

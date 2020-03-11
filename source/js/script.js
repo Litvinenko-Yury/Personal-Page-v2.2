@@ -49,19 +49,20 @@ function showMeHeaderWrap() {
 /*ФУНКЦИЯ показать .me__wrapper*/
 let meWrapper = me.querySelector('.me__wrapper');
 function showMeWrapper() {
-  meWrapper.classList.add('me__wrapper--width-0-50'); //показать .me__wrapper
+  //meWrapper.classList.add('me__wrapper--width-0-50'); //показать .me__wrapper
+  meWrapper.classList.add('me__wrapper--show'); //показать .me__wrapper
   meList.classList.add('me__list--border'); // изменить border
 };
 
 /*ФУНКЦИЯ скрыть .me__wrapper*/
 function hideMeWrapper() {
-  meWrapper.classList.remove('me__wrapper--width-0-50');
-  meWrapper.classList.add('me__wrapper--width-50-0');
-
-  function removeMeWrapperWidth_50_0() {
-    meWrapper.classList.remove('me__wrapper--width-50-0');
-  }
-  setTimeout(removeMeWrapperWidth_50_0, 400);
+  //meWrapper.classList.remove('me__wrapper--width-0-50');
+  //meWrapper.classList.add('me__wrapper--width-50-0');
+  meWrapper.classList.remove('me__wrapper--show'); //скрыть .me__wrapper
+  // function removeMeWrapperWidth_50_0() {
+  //   meWrapper.classList.remove('me__wrapper--width-50-0');
+  // }
+  // setTimeout(removeMeWrapperWidth_50_0,300);
 
   meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
 };
@@ -81,7 +82,7 @@ function clickContactHeaderWrap() {
     function removeContactWidth_100_50() {
       contact.classList.remove('contact--width-100-50');
     }
-    setTimeout(removeContactWidth_100_50, 400);
+    setTimeout(removeContactWidth_100_50,300);
 
     // уменьшить ширину .contact__list-wrap
     contactListWrap.classList.remove('contact__list-wrap--width-0-50');
@@ -89,7 +90,7 @@ function clickContactHeaderWrap() {
     function removeContactListWrap_50_0() {
       contactListWrap.classList.remove('contact__list-wrap--width-50-0');
     }
-    setTimeout(removeContactListWrap_50_0, 400);
+    setTimeout(removeContactListWrap_50_0,300);
 
     // увеличить ширину .me
     me.classList.remove('me--width-50-0')
@@ -98,7 +99,7 @@ function clickContactHeaderWrap() {
     function removeMeWidth_0_50() {
       me.classList.remove('me--width-0-50');
     }
-    setTimeout(removeMeWidth_0_50, 400);
+    setTimeout(removeMeWidth_0_50,300);
 
     // и удалить .active
     contactHeaderWrap.classList.remove('active');
@@ -112,7 +113,7 @@ function clickContactHeaderWrap() {
     function addMeDisplayNone() {
       me.style.display = "none";
     };
-    setTimeout(addMeDisplayNone, 400);
+    setTimeout(addMeDisplayNone,300);
   }
 }
 
@@ -125,7 +126,7 @@ function clickMeHeaderWrap() {
     function removeMeWidth_100_50() {
       me.classList.remove('me--width-100-50');
     }
-    setTimeout(removeMeWidth_100_50, 400);
+    setTimeout(removeMeWidth_100_50,300);
 
     // уменьшить ширину .me__list-wrap
     meListWrap.classList.remove('me__list-wrap--width-0-50');
@@ -133,7 +134,7 @@ function clickMeHeaderWrap() {
     function removeMeListWrap_50_0() {
       meListWrap.classList.remove('me__list-wrap--width-50-0');
     }
-    setTimeout(removeMeListWrap_50_0, 400);
+    setTimeout(removeMeListWrap_50_0,300);
 
     // увеличить ширину .contact
     contact.classList.remove('contact--width-50-0');
@@ -142,7 +143,7 @@ function clickMeHeaderWrap() {
     function removeContactWidth_0_50() {
       contact.classList.remove('contact--width-0-50');
     }
-    setTimeout(removeContactWidth_0_50, 400);
+    setTimeout(removeContactWidth_0_50,300);
 
     // удалить .active и модификатор &--width-0-50
     meHeaderWrap.classList.remove('active');
@@ -157,7 +158,7 @@ function clickMeHeaderWrap() {
     function addContactDisplayNone() {
       contact.style.display = "none";
     };
-    setTimeout(addContactDisplayNone, 400);
+    setTimeout(addContactDisplayNone,300);
   }
 }
 

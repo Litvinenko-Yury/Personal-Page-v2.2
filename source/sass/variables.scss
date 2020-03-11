@@ -5,9 +5,9 @@
 $font-family: "Roboto", "Arial", sans-serif;
 
 //$font-size-h1: px;
-$font-size-h2: 5em;
-$font-size-h3: 2.5em;
-$font-size-h4: 1.25em;
+$font-size-h2: 5rem;
+$font-size-h3: 2.5rem;
+$font-size-h4: 1.25rem;
 //$font-size-h5: px;
 //$font-size-h6: px;
 
@@ -68,62 +68,9 @@ $text-color: #e1e1e1; // Global text color on <body>;
 //=============================
 //===Links====
 //=============================
-
 $link-color: #e1e1e1;
 $link-color--hover: #00f5ff;
 $link-color--down: #009399;
-//$link-color: ;
-///$link-color--hover: ;
-//$link-color--focus: ;
-//$link-color--active: ; //активная ссылка
-//$link-color--down: ; //клик на ссылку
-
-//$link-bg: ;
-//$link-bg--hover: ;
-//$link-bg--focus: ;
-//$link-bg--active: ; //активная ссылка
-//$link-bg--down: ; //клик на ссылку
-
-//=============================
-//===Buttons===
-//=============================
-
-//$btn-padding-vertical--large: px;
-//$btn-padding-horizontal--large: px;
-//$btn-padding-vertical: px;
-//$btn-padding-horizontal: px;
-//$btn-padding-vertical--small: px;
-//$btn-padding-horizontal--small: px;
-
-//$btn-font-size: px;
-//$btn-line-height: em;
-//$btn-font-wight: ;
-
-// $btn-color: ;
-// $btn-color--hover: ;
-// $btn-color--active: ;
-
-//$btn-border: ;
-
-//$btn-bg: ;
-//$btn-bg--hover: ;
-//$btn-bg--active: ;
-
-//$btn-border-radius-base: px;
-
-//$btn-border-color-base: ;
-
-//=============================
-//===Slider====
-//=============================
-//$slider-btn--base: ;
-//$slider-btn--hover: ;
-//$slider-btn--active: ;
-
-//$slider-toggle: ;
-//$slider-toggle--active: ;
-//$slider-toggle--hover: ;
-//$slider-toggle--down: ;
 
 //=============================
 //===Media queries breakpoints===
@@ -141,4 +88,4 @@ $desktop-width: 960px;
 //===Animate===
 //=============================
 $transition-time: 0.2s;
-$anim: 0.4s both;
+$anim: 0.3s both;
