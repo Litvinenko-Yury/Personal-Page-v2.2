@@ -17,12 +17,18 @@ let meList = document.querySelector('.me__list');
 
 /**======================= */
 /*===ФУНКЦИИ*/
+
 function addBackRight() {
   contactHeader.innerHTML = "BACK";
 };
 
 function addBackleft() {
   meHeader.innerHTML = "BACK";
+};
+
+/*ФУНКЦИЯ заменить содержимое на BACK*/
+let addBack = (self) => {
+  self.innerHTML = "BACK";
 };
 
 function addContactRight() {
@@ -62,11 +68,12 @@ function hideMeWrapper() {
   // function removeMeWrapperWidth_50_0() {
   //   meWrapper.classList.remove('me__wrapper--width-50-0');
   // }
-  // setTimeout(removeMeWrapperWidth_50_0,300);
+  // setTimeout(removeMeWrapperWidth_50_0,400);
 
   meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
 };
 
+/*ФУНКЦИЯ удалить .me__link--ххх*/
 function removeActive() {
   meLinkSkills.classList.remove('me__link--active'); //удалить .me__link--active для Skills
   meLinkCard.classList.remove('me__link--active'); //удалить .me__link--active для Card
@@ -82,7 +89,7 @@ function clickContactHeaderWrap() {
     function removeContactWidth_100_50() {
       contact.classList.remove('contact--width-100-50');
     }
-    setTimeout(removeContactWidth_100_50,300);
+    setTimeout(removeContactWidth_100_50, 400);
 
     // уменьшить ширину .contact__list-wrap
     contactListWrap.classList.remove('contact__list-wrap--width-0-50');
@@ -90,7 +97,10 @@ function clickContactHeaderWrap() {
     function removeContactListWrap_50_0() {
       contactListWrap.classList.remove('contact__list-wrap--width-50-0');
     }
-    setTimeout(removeContactListWrap_50_0,300);
+    setTimeout(removeContactListWrap_50_0, 400);
+
+    // изменить  содержимое .contact__header
+    addContactRight();
 
     // увеличить ширину .me
     me.classList.remove('me--width-50-0')
@@ -99,7 +109,7 @@ function clickContactHeaderWrap() {
     function removeMeWidth_0_50() {
       me.classList.remove('me--width-0-50');
     }
-    setTimeout(removeMeWidth_0_50,300);
+    setTimeout(removeMeWidth_0_50, 400);
 
     // и удалить .active
     contactHeaderWrap.classList.remove('active');
@@ -108,12 +118,15 @@ function clickContactHeaderWrap() {
     contact.classList.add('contact--width-50-100');
     contactListWrap.classList.add('contact__list-wrap--width-0-50');
     contactHeaderWrap.classList.add('active');
+    if (document.documentElement.clientWidth < 960) {
+      addBackRight();
+    };
 
     me.classList.add('me--width-50-0');
     function addMeDisplayNone() {
       me.style.display = "none";
     };
-    setTimeout(addMeDisplayNone,300);
+    setTimeout(addMeDisplayNone, 400);
   }
 }
 
@@ -126,7 +139,7 @@ function clickMeHeaderWrap() {
     function removeMeWidth_100_50() {
       me.classList.remove('me--width-100-50');
     }
-    setTimeout(removeMeWidth_100_50,300);
+    setTimeout(removeMeWidth_100_50, 400);
 
     // уменьшить ширину .me__list-wrap
     meListWrap.classList.remove('me__list-wrap--width-0-50');
@@ -134,7 +147,10 @@ function clickMeHeaderWrap() {
     function removeMeListWrap_50_0() {
       meListWrap.classList.remove('me__list-wrap--width-50-0');
     }
-    setTimeout(removeMeListWrap_50_0,300);
+    setTimeout(removeMeListWrap_50_0, 400);
+
+    // изменить  содержимое .contact__header
+    addMeLeft();
 
     // увеличить ширину .contact
     contact.classList.remove('contact--width-50-0');
@@ -143,7 +159,7 @@ function clickMeHeaderWrap() {
     function removeContactWidth_0_50() {
       contact.classList.remove('contact--width-0-50');
     }
-    setTimeout(removeContactWidth_0_50,300);
+    setTimeout(removeContactWidth_0_50, 400);
 
     // удалить .active и модификатор &--width-0-50
     meHeaderWrap.classList.remove('active');
@@ -153,17 +169,20 @@ function clickMeHeaderWrap() {
     me.classList.add('me--width-50-100');
     meListWrap.classList.add('me__list-wrap--width-0-50');
     meHeaderWrap.classList.add('active');
+    if (document.documentElement.clientWidth < 960) {
+      addBackleft();
+    };
 
     contact.classList.add('contact--width-50-0');
     function addContactDisplayNone() {
       contact.style.display = "none";
     };
-    setTimeout(addContactDisplayNone,300);
+    setTimeout(addContactDisplayNone, 400);
   }
 }
 
 /**======================= */
-/*===клик на CONTACT (.contact__header-wrap)*/
+/*===СОБЫТИЕ - клик на CONTACT (.contact__header-wrap)*/
 contactHeaderWrap.addEventListener('click', function () {
   clickContactHeaderWrap();
 });
@@ -171,6 +190,7 @@ contactHeaderWrap.addEventListener('click', function () {
 contactHeaderWrap.addEventListener('mouseover', function () {
   if (this.classList.contains('active')) {
     addBackRight();
+    //addBack(this);
   } else {
     addContactRight();
   }
@@ -183,7 +203,7 @@ contactHeaderWrap.addEventListener('mouseout', function () {
 });
 
 /**======================= */
-/*===клик на ME*/
+/*===СОБЫТИЕ - клик на ME*/
 meHeaderWrap.addEventListener('click', function () {
   clickMeHeaderWrap();
 });
@@ -204,7 +224,7 @@ meHeaderWrap.addEventListener('mouseout', function () {
 
 
 /**======================= */
-/*===клик на .me__link--skills*/
+/*===СОБЫТИЕ - клик на .me__link--skills*/
 let meLinkSkills = meList.querySelector('.me__link--skills');
 
 meLinkSkills.addEventListener('click', function () {
@@ -219,6 +239,11 @@ meLinkSkills.addEventListener('click', function () {
 
     removeActive();
     this.classList.add('me__link--active'); //добавить .me__link--active
+
+    //для $mob-width изменить содержимое на BACK
+    if (document.documentElement.clientWidth < 960) {
+      addBack(this);
+    }
   }
 });
 
@@ -252,6 +277,11 @@ meLinkCard.addEventListener('click', function () {
 
     removeActive();
     this.classList.add('me__link--active'); //добавить .me__link--active
+
+    //для $mob-width изменить содержимое на BACK
+    if (document.documentElement.clientWidth < 960) {
+      addBack(this);
+    }
   }
 });
 
@@ -285,6 +315,11 @@ meLinkEdu.addEventListener('click', function () {
 
     removeActive();
     this.classList.add('me__link--active'); //добавить .me__link--active
+
+   //для $mob-width изменить содержимое на BACK
+   if (document.documentElement.clientWidth < 960) {
+    addBack(this);
+  }
   }
 });
 

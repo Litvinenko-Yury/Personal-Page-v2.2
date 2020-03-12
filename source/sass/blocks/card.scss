@@ -1,9 +1,9 @@
 .card {
   position: relative;
   z-index: 0;
-  width: 280px;
+  width: 100%;
   margin: 0 auto;
-  margin-bottom: 4em;
+  margin-bottom: 4rem;
   border: 1px solid $text-color;
 
   @media (min-width: $desktop-width) {
@@ -13,7 +13,7 @@
     margin-bottom: 0;
 
     &:not(:last-child) {
-      margin-bottom: 4em;
+      margin-bottom: 4rem;
     }
 
     &:hover .card__overlay {
@@ -32,25 +32,22 @@
   height: 100%;
   object-fit: cover;
   font-family: "object-fit: contain;"; /* stylelint-disable-line */
-
-  @media (min-width: $desktop-width) {
-    // border-top-left-radius: 8px;
-    // border-top-right-radius: 8px;
-  }
 }
 
 .card__descr-wrap {
-  padding: 1.5em 1em;
+  padding: 0.5em;
 
   @media (min-width: $desktop-width) {
     flex-basis: 13rem;
     flex-shrink: 0;
+
+    padding: 1.5rem 1rem;
   }
 }
 
 .card__title {
   margin: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 
   @media (min-width: $desktop-width) {
     font-size: $font-size-h4;
@@ -90,32 +87,36 @@
 
 .card__descr {
   display: inline-block;
+  font-size: 0.9rem;
   font-weight: 300;
+
+  @media (min-width: $desktop-width) {
+    font-size: 1.1rem;
+  }
 
   &--pd-bottom {
     padding-left: 0;
   }
 
   &--last {
-    padding-bottom: 15px;
+    padding-bottom: 1rem;
   }
 }
 
 .card__link {
   position: relative;
   display: block;
-  padding: 1em;
+  padding: 1rem 0;
   width: 100%;
+  font-size: 0.9rem;
   text-decoration: underline;
   text-transform: uppercase;
   color: $link-color;
   cursor: pointer;
 
   @media (min-width: $desktop-width) {
-    //margin-top: 30px;
-    // padding-left: 20px;
-    // padding-right: 20px;
-    font-size: $font-size + 8px;
+    padding: 1rem;
+    font-size: $font-size + 9px;
     text-align: center;
     text-decoration: none;
     color: $text-color;

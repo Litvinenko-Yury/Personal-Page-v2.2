@@ -2,25 +2,23 @@
   @include scrollbar;
 
   height: 100%;
-  padding: 3em 7em;
- // overflow-x: hidden;
+  padding: 0.75rem;
+  overflow-x: hidden;
 
   color: $text-color;
-  border-bottom: 1px solid #525252;
 
-  // @media (min-width: $tablet-width) {
-  //   width: 620px;
-  //   margin: 0 auto;
-  // }
+  @media (min-width: $tablet-width) {
+    padding: 1.75rem;
+  }
 
-  // @media (min-width: $desktop-width) {
-  //   width: 920px;
-  //   margin: 0 auto;
-  // }
+  @media (min-width: $desktop-width) {
+    padding: 3rem 7rem;
+    overflow-x: auto;
+  }
 }
 
 .cards-list__wrapper {
-  @media (min-width: $tablet-width) {
+  @media (min-width: $desktop-width) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

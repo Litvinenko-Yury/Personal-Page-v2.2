@@ -2,32 +2,25 @@
   @include scrollbar;
 
   min-height: 100%;
-  padding: 3em;
-  //overflow-x: hidden;
+  padding: 0.75rem;
+  overflow-x: hidden;
 
   color: $text-color;
-  border-bottom: 1px solid #525252;
 
-  // @media (min-width: $tablet-width) {
-  //   width: 620px;
-  //   margin: 0 auto;
-  //   margin-bottom: 70px;
-  // }
+  @media (min-width: $tablet-width) {
+    padding: 1.75rem;
+  }
 
-  // @media (min-width: $desktop-width) {
-  //   width: 920px;
-  // }
+  @media (min-width: $desktop-width) {
+    padding: 3rem 7rem;
+    overflow-x: auto;
+  }
 }
 
 .skills__list {
   margin: 0;
   padding-left: 0;
   list-style: none;
-
-  // @media (min-width: $mob-xs-width) {
-  //   column-count: 2;
-  //   column-gap: 5%;
-  // }
 
   @media (min-width: $desktop-width) {
     column-count: 2;
@@ -37,7 +30,7 @@
 
 .skills__list-item {
   display: flex;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   overflow: hidden;
 
   &--ok {
@@ -75,7 +68,7 @@
   width: 24px;
   height: 24px;
 
-  margin-right: 1em;
+  margin-right: 1rem;
   fill: $text-color;
 
   &--mr {
@@ -84,5 +77,25 @@
 }
 
 .skills__list-item-text {
-  font-size: 1.25em;
+  font-size: 1rem;
+
+  @media (min-width: $tablet-width) {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 1.5rem;
+  }
+
+  &--small {
+    font-size: 0.85rem;
+
+    @media (min-width: $tablet-width) {
+      font-size: 1.25rem;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 1.5rem;
+    }
+  }
 }
