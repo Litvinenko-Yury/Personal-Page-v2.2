@@ -55,21 +55,13 @@ function showMeHeaderWrap() {
 /*ФУНКЦИЯ показать .me__wrapper*/
 let meWrapper = me.querySelector('.me__wrapper');
 function showMeWrapper() {
-  //meWrapper.classList.add('me__wrapper--width-0-50'); //показать .me__wrapper
   meWrapper.classList.add('me__wrapper--show'); //показать .me__wrapper
   meList.classList.add('me__list--border'); // изменить border
 };
 
 /*ФУНКЦИЯ скрыть .me__wrapper*/
 function hideMeWrapper() {
-  //meWrapper.classList.remove('me__wrapper--width-0-50');
-  //meWrapper.classList.add('me__wrapper--width-50-0');
   meWrapper.classList.remove('me__wrapper--show'); //скрыть .me__wrapper
-  // function removeMeWrapperWidth_50_0() {
-  //   meWrapper.classList.remove('me__wrapper--width-50-0');
-  // }
-  // setTimeout(removeMeWrapperWidth_50_0,400);
-
   meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
 };
 
@@ -190,7 +182,6 @@ contactHeaderWrap.addEventListener('click', function () {
 contactHeaderWrap.addEventListener('mouseover', function () {
   if (this.classList.contains('active')) {
     addBackRight();
-    //addBack(this);
   } else {
     addContactRight();
   }
