@@ -1,0 +1,36 @@
+.video {
+  margin-top: 1em;
+}
+
+.video__text {
+  padding: 1em;
+  font-size: 1.25em;
+  text-align: center;
+  color: $color-second;
+}
+
+.video__wrap {
+  display: block;
+  width: 100%;
+  outline: none;
+}
+
+.video__container {
+  position: relative;
+}
+
+.video__source {
+  display: block;
+  width: 100%;
+  height: 511px; /*нужно указать высоту видеоролика при определенной ширине в макете*/
+  border: 3px solid red;
+}
+
+.video__body {
+  padding: 10px 30px;
+}
+
+.video__descr {
+  margin-bottom: 25px;
+  padding-right: 10px;
+}

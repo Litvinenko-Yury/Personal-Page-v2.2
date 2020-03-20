@@ -30,7 +30,7 @@
     <include src="build/img/vector/svg_sprite.svg"></include>
   </div>
 
-  <div class="homepage  anim-opacity">
+  <!-- <div class="homepage  anim-opacity">
     <h1 class="visually-hidden">Yury Litvinenko</h1>
     <div class="homepage__wrap   anim-slide-out">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249.06 36.1" style="">
@@ -65,7 +65,7 @@
         </style>
       </svg>
     </div>
-  </div>
+  </div> -->
 
 
   <div class="contact">
@@ -115,19 +115,14 @@
         <li class="me__item">
           <a class="me__link  me__link--edu" href="#edu">EDUCATION</a>
         </li>
+        <li class="me__item">
+          <a class="me__link  me__link--about" href="#about">ABOUT</a>
+        </li>
       </ul>
     </div>
 
     <div class="me__wrapper">
       <div class="skills" id="skills">
-        <section class="about">
-          <h2 class="about__title">Yury Litvinenko</h2>
-          <picture>
-            <img class="about__img" src="img/rastr/img-main2@1x.jpg" srcset="img/rastr/img-main2@2x.jpg 2x" alt="Yury Litvinenko">
-          </picture>
-          <span class="about__descr"><span class="about__descr-color">HTML/CSS/JS </span>DEVELOPER</span>
-        </section>
-
         <h3 class="title">
           <svg class="title__title-svg" width="24" height="24" aria-hidden="true">
             <use xlink:href="#icon-skill" />
@@ -403,7 +398,58 @@
           </picture>
         </div>
       </section>
+
+      <section class="about" id="about">
+        <h3 class="title">
+          <svg class="title__title-svg" width="24" height="24" aria-hidden="true">
+            <use xlink:href="#icon-about"></use>
+          </svg>
+          <span class="title__text">About</span>
+        </h3>
+
+        <h2 class="about__title">Yury Litvinenko</h2>
+        <picture>
+          <img class="about__img" src="img/rastr/img-main@1x.jpg" srcset="img/rastr/img-main@2x.jpg 2x" alt="Yury Litvinenko">
+        </picture>
+        <span class="about__descr"><span class="about__descr-color">HTML/CSS/JS </span>DEVELOPER</span>
+        <span class="about__text">Current Location: Donetsk, Ukraine</span>
+
+        <article class="video">
+          <p class="video__text">I'm available for freelance work.</p>
+          <video class="video__wrap" poster="img/video/work-poster.jpg" controls="controls" preload="none">
+            <source src="img/video/work.mp4" type="video/mp4">
+            Элемент video не поддерживается вашим браузером.
+          </video>
+        </article>
+
+        <h4 class="about__text">My hobby</h4>
+        <ul class="hobby">
+          <li class="hobby__item">
+            <p>Quote from The Twelve Chairs by Ilf and Petrov:</p>
+            <blockquote>"Нit motor rally by off road."</blockquote>
+          </li>
+          <li class="hobby__item">
+            <p>repair of complex household appliances, such as:</p>
+            <ul>
+              <li>s-class cars</li>
+              <li>washing machines</li>
+              <li>refrigerators and air conditioners</li>
+              <li>heating boilers</li>
+              <li>etc.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <article class="video">
+          <p class="video__text">SOME TEXT</p>
+          <video class="video__wrap" poster="img/video/wolf-poster.jpg" controls="controls" preload="none">
+            <source src="img/video/wolf.mp4" type="video/mp4">
+            Элемент video не поддерживается вашим браузером.
+          </video>
+        </article>
     </div>
+    </section>
+  </div>
   </div>
 
   <div class="modal-overlay"></div>

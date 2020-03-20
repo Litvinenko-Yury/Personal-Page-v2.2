@@ -65,11 +65,15 @@ function hideMeWrapper() {
   meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
 };
 
+
 /*ФУНКЦИЯ удалить .me__link--ххх*/
 function removeActive() {
   meLinkSkills.classList.remove('me__link--active'); //удалить .me__link--active для Skills
   meLinkCard.classList.remove('me__link--active'); //удалить .me__link--active для Card
   meLinkEdu.classList.remove('me__link--active'); //удалить .me__link--active для Edu
+  meLinkAbout.classList.remove('me__link--active'); //удалить .me__link--active для About
+  video1.pause();
+  video2.pause();
 };
 
 /*ФУНКЦИЯ клик на CONTACT*/
@@ -307,10 +311,10 @@ meLinkEdu.addEventListener('click', function () {
     removeActive();
     this.classList.add('me__link--active'); //добавить .me__link--active
 
-   //для $mob-width изменить содержимое на BACK
-   if (document.documentElement.clientWidth < 960) {
-    addBack(this);
-  }
+    //для $mob-width изменить содержимое на BACK
+    if (document.documentElement.clientWidth < 960) {
+      addBack(this);
+    }
   }
 });
 
@@ -328,3 +332,44 @@ meLinkEdu.addEventListener('mouseout', function () {
   }
 });
 
+/**======================= */
+/*===клик на .me__link--about*/
+let meLinkAbout = meList.querySelector('.me__link--about');
+let video1 = document.querySelectorAll('.video__wrap')[0],
+  video2 = document.querySelectorAll('.video__wrap')[1];
+
+meLinkAbout.addEventListener('click', function () {
+  if (this.innerHTML === 'BACK') {
+    hideMeWrapper();
+    showMeHeaderWrap();
+    this.classList.remove('me__link--active'); //удалить .me__link--active
+    video1.pause();
+    video2.pause();
+
+    this.innerHTML = 'About'; //изменить BACK на ABOUT
+  } else {
+    hideMeHeaderWrap();
+    showMeWrapper();
+    removeActive();
+    this.classList.add('me__link--active'); //добавить .me__link--active
+
+    //для $mob-width изменить содержимое на BACK
+    if (document.documentElement.clientWidth < 960) {
+      addBack(this);
+    }
+  }
+});
+
+//изменить содержимое на BACK
+meLinkAbout.addEventListener('mouseover', function () {
+  if (this.classList.contains('me__link--active') === true) {
+    this.innerHTML = "BACK";
+  }
+});
+
+//изменить содержимое на ABOUT
+meLinkAbout.addEventListener('mouseout', function () {
+  if (this.classList.contains('me__link--active') === true) {
+    this.innerHTML = "ABOUT";
+  }
+});

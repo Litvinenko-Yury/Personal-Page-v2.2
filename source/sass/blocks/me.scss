@@ -135,7 +135,7 @@
 
 .me__item {
   display: flex;
-  height: 33.33333%;
+  height: 25%;
 
   &:not(:last-child) {
     border-bottom: 1px solid #525252;
@@ -199,6 +199,7 @@
   cursor: default;
 
   &--show {
+    display: block;
     width: 50vw;
   }
 

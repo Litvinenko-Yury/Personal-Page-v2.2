@@ -1,5 +1,20 @@
 .about {
-  margin-bottom: 2.5rem;
+  @include scrollbar;
+
+  min-height: 100%;
+  padding: 0.75rem;
+  overflow-x: hidden;
+
+  color: $text-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 1.75rem;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 3rem 7rem;
+    overflow-x: auto;
+  }
 }
 
 .about__title {
@@ -25,7 +40,7 @@
   object-fit: cover;
   font-family: "object-fit: contain;"; /* stylelint-disable-line */
   border-radius: 50%;
-  filter: sepia(100%) brightness(80%);
+  //filter: sepia(100%) brightness(80%);
 
   @media (min-width: $tablet-width) {
     width: 200px;
@@ -44,6 +59,7 @@
   margin: 0 auto;
   margin-top: 1rem;
   font-size: 1rem;
+  font-weight: 300;
   text-align: center;
 
   @media (min-width: $tablet-width) {
@@ -59,4 +75,12 @@
 
 .about__descr-color {
   color: $color-second;
+}
+
+.about__text {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.25em;
+  font-weight: 300;
+  text-align: center;
 }
