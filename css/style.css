@@ -408,7 +408,30 @@ blockquote {
   overflow: hidden; }
 
 .about {
-  margin-bottom: 2.5rem; }
+  height: 100%;
+  overflow-y: auto;
+  min-height: 100%;
+  padding: 0.75rem;
+  overflow-x: hidden;
+  color: #e1e1e1; }
+  .about::-webkit-scrollbar {
+    width: 4px;
+    background-color: #3d3d3d; }
+  .about::-webkit-scrollbar-thumb {
+    background-color: #2c2c2c;
+    border-left: 1px solid #3d3d3d; }
+  @media (min-width: 660px) {
+    .about {
+      /*стилизация scrollbar*/ }
+      .about::-webkit-scrollbar {
+        width: 10px; } }
+  @media (min-width: 660px) {
+    .about {
+      padding: 1.75rem; } }
+  @media (min-width: 1200px) {
+    .about {
+      padding: 3rem 7rem;
+      overflow-x: auto; } }
 
 .about__title {
   font-size: 1.25rem;
@@ -431,9 +454,7 @@ blockquote {
      object-fit: cover;
   font-family: "object-fit: contain;";
   /* stylelint-disable-line */
-  border-radius: 50%;
-  -webkit-filter: sepia(100%) brightness(80%);
-          filter: sepia(100%) brightness(80%); }
+  border-radius: 50%; }
   @media (min-width: 660px) {
     .about__img {
       width: 200px;
@@ -449,6 +470,7 @@ blockquote {
   margin: 0 auto;
   margin-top: 1rem;
   font-size: 1rem;
+  font-weight: 300;
   text-align: center; }
   @media (min-width: 660px) {
     .about__descr {
@@ -461,6 +483,13 @@ blockquote {
 
 .about__descr-color {
   color: #00dbe1; }
+
+.about__text {
+  display: block;
+  margin-top: 2rem;
+  font-size: 1.25em;
+  font-weight: 300;
+  text-align: center; }
 
 /*анимация прозрачости для .homepage*/
 .anim-opacity {
@@ -978,25 +1007,13 @@ blockquote {
       .education__img--last-child {
         margin-bottom: 0; } }
 
-.homepage {
-  position: fixed;
-  z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: #ffffff; }
+.hobby {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 2rem; }
 
-.homepage__wrap {
-  display: block;
-  width: 75%; }
+.hobby__item {
+  margin-top: 1rem; }
 
 .me {
   position: fixed;
@@ -1161,7 +1178,7 @@ blockquote {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 33.33333%; }
+  height: 25%; }
   .me__item:not(:last-child) {
     border-bottom: 1px solid #525252; }
 
@@ -1214,6 +1231,7 @@ blockquote {
   /*=======*/
   /*=======*/ }
   .me__wrapper--show {
+    display: block;
     width: 50vw; }
   .me__wrapper--width-0-50 {
     display: block;
@@ -1445,3 +1463,34 @@ blockquote {
     .title__subtext {
       display: inline;
       font-size: 2.5rem; } }
+
+.video {
+  margin-top: 1em; }
+
+.video__text {
+  padding: 1em;
+  font-size: 1.25em;
+  text-align: center;
+  color: #00dbe1; }
+
+.video__wrap {
+  display: block;
+  width: 100%;
+  outline: none; }
+
+.video__container {
+  position: relative; }
+
+.video__source {
+  display: block;
+  width: 100%;
+  height: 511px;
+  /*нужно указать высоту видеоролика при определенной ширине в макете*/
+  border: 3px solid red; }
+
+.video__body {
+  padding: 10px 30px; }
+
+.video__descr {
+  margin-bottom: 25px;
+  padding-right: 10px; }
