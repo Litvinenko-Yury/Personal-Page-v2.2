@@ -30,7 +30,7 @@
     <include src="build/img/vector/svg_sprite.svg"></include>
   </div>
 
-  <!-- <div class="homepage  anim-opacity">
+  <div class="homepage  anim-opacity">
     <h1 class="visually-hidden">Yury Litvinenko</h1>
     <div class="homepage__wrap   anim-slide-out">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 249.06 36.1" style="">
@@ -65,7 +65,7 @@
         </style>
       </svg>
     </div>
-  </div> -->
+  </div>
 
 
   <div class="contact">
@@ -408,11 +408,17 @@
         </h3>
 
         <h2 class="about__title">Yury Litvinenko</h2>
-        <picture>
-          <img class="about__img" src="img/rastr/img-main@1x.jpg" srcset="img/rastr/img-main@2x.jpg 2x" alt="Yury Litvinenko">
-        </picture>
-        <span class="about__descr"><span class="about__descr-color">HTML/CSS/JS </span>DEVELOPER</span>
-        <span class="about__text">Current Location: Donetsk, Ukraine</span>
+
+        <div class="about__wrapper">
+          <picture>
+            <img class="about__img" src="img/rastr/img-main@1x.jpg" srcset="img/rastr/img-main@2x.jpg 2x" alt="Yury Litvinenko">
+          </picture>
+
+          <div class="about__wrapper-inner">
+            <span class="about__descr"><span class="about__descr-color">HTML/CSS/JS </span>DEVELOPER</span>
+            <span class="about__text">Current Location: Donetsk, Ukraine</span>
+          </div>
+        </div>
 
         <article class="video">
           <p class="video__text">I'm available for freelance work.</p>

@@ -12,7 +12,7 @@
   }
 
   @media (min-width: $desktop-width) {
-    padding: 3rem 7rem;
+    @include padding-desktop;
     overflow-x: auto;
   }
 }

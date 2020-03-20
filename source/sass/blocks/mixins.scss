@@ -20,6 +20,10 @@
   }
 }
 
+@mixin padding-desktop {
+  padding: 3rem 5rem;
+}
+
 @mixin width-from50-to100 {
   @keyframes width-50-100 {
     0% {
