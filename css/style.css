@@ -430,7 +430,7 @@ blockquote {
       padding: 1.75rem; } }
   @media (min-width: 1200px) {
     .about {
-      padding: 3rem 7rem;
+      padding: 3rem 5rem;
       overflow-x: auto; } }
 
 .about__title {
@@ -443,6 +443,30 @@ blockquote {
   @media (min-width: 1200px) {
     .about__title {
       font-size: 4rem; } }
+
+.about__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.about__wrapper-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .about__img {
   display: block;
@@ -570,7 +594,7 @@ blockquote {
       padding: 1.75rem; } }
   @media (min-width: 1200px) {
     .cards-list {
-      padding: 3rem 7rem;
+      padding: 3rem 5rem;
       overflow-x: auto; } }
 
 @media (min-width: 1200px) {
@@ -958,7 +982,7 @@ blockquote {
       padding: 1.75rem; } }
   @media (min-width: 1200px) {
     .education {
-      padding: 3rem 7rem;
+      padding: 3rem 5rem;
       overflow-x: auto; } }
 
 .education__link {
@@ -1014,6 +1038,26 @@ blockquote {
 
 .hobby__item {
   margin-top: 1rem; }
+
+.homepage {
+  position: fixed;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff; }
+
+.homepage__wrap {
+  display: block;
+  width: 75%; }
 
 .me {
   position: fixed;
@@ -1335,7 +1379,7 @@ blockquote {
       padding: 1.75rem; } }
   @media (min-width: 1200px) {
     .skills {
-      padding: 3rem 7rem;
+      padding: 3rem 5rem;
       overflow-x: auto; } }
 
 .skills__list {
