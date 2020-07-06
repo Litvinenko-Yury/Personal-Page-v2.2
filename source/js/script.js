@@ -1,375 +1,390 @@
-"use strict";
+'use strict';
 
-let contact = document.querySelector('.contact');
-let me = document.querySelector('.me');
+/**=== script modal-innerHTML.js ===*/
 
-let contactHeaderWrap = document.querySelector('.contact__header-wrap');
-let meHeaderWrap = document.querySelector('.me__header-wrap');
+document.addEventListener('DOMContentLoaded', () => {
+  const contact = document.querySelector('.contact'),
+    me = document.querySelector('.me');
 
-let contactHeader = document.querySelector('.contact__header');
-let meHeader = document.querySelector('.me__header');
+  const contactHeaderWrap = document.querySelector('.contact__header-wrap'),
+    meHeaderWrap = document.querySelector('.me__header-wrap');
 
-let contactListWrap = document.querySelector('.contact__list-wrap');
-let meListWrap = document.querySelector('.me__list-wrap');
+  const contactHeader = document.querySelector('.contact__header'),
+    meHeader = document.querySelector('.me__header');
 
-let meList = document.querySelector('.me__list');
+  const contactListWrap = document.querySelector('.contact__list-wrap'),
+    meListWrap = document.querySelector('.me__list-wrap');
 
-
-/**======================= */
-/*===ФУНКЦИИ*/
-
-function addBackRight() {
-  contactHeader.innerHTML = "BACK";
-};
-
-function addBackleft() {
-  meHeader.innerHTML = "BACK";
-};
-
-/*ФУНКЦИЯ заменить содержимое на BACK*/
-let addBack = (self) => {
-  self.innerHTML = "BACK";
-};
-
-function addContactRight() {
-  contactHeader.innerHTML = "CONTACT";
-};
-
-function addMeLeft() {
-  meHeader.innerHTML = "ME";
-};
-
-/**!!!!!!==========*/
-/*ФУНКЦИЯ скрыть .me__header-wrap*/
-function hideMeHeaderWrap() {
-  meHeaderWrap.classList.remove('me__header-wrap--width-0-50');
-  meHeaderWrap.classList.add('me__header-wrap--width-50-0');
-}
-
-/*ФУНКЦИЯ показать .me__header-wrap*/
-function showMeHeaderWrap() {
-  meHeaderWrap.classList.remove('me__header-wrap--width-50-0');
-  meHeaderWrap.classList.add('me__header-wrap--width-0-50');
-}
-
-/*ФУНКЦИЯ показать .me__wrapper*/
-let meWrapper = me.querySelector('.me__wrapper');
-function showMeWrapper() {
-  meWrapper.classList.add('me__wrapper--show'); //показать .me__wrapper
-  meList.classList.add('me__list--border'); // изменить border
-};
-
-/*ФУНКЦИЯ скрыть .me__wrapper*/
-function hideMeWrapper() {
-  meWrapper.classList.remove('me__wrapper--show'); //скрыть .me__wrapper
-  meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
-};
+  const meList = document.querySelector('.me__list');
 
 
-/*ФУНКЦИЯ удалить .me__link--ххх*/
-function removeActive() {
-  meLinkSkills.classList.remove('me__link--active'); //удалить .me__link--active для Skills
-  meLinkCard.classList.remove('me__link--active'); //удалить .me__link--active для Card
-  meLinkEdu.classList.remove('me__link--active'); //удалить .me__link--active для Edu
-  meLinkAbout.classList.remove('me__link--active'); //удалить .me__link--active для About
-  video1.pause();
-  video2.pause();
-};
+  /**======================= */
+  /*Добавить/убрать GLITCH по hover на ME*/
+  const glitch = document.querySelector('.glitch');
+  me.addEventListener('mouseover', () => {
+    glitch.classList.remove('glitch');
+  });
+  me.addEventListener('mouseout', () => {
+    glitch.classList.add('glitch');
+  });
 
-/*ФУНКЦИЯ клик на CONTACT*/
-function clickContactHeaderWrap() {
-  if (contact.classList.contains('contact--width-50-100')) {
-    // уменьшить ширину .contact
-    contact.classList.remove('contact--width-50-100');
-    contact.classList.add('contact--width-100-50');
-    function removeContactWidth_100_50() {
-      contact.classList.remove('contact--width-100-50');
-    }
-    setTimeout(removeContactWidth_100_50, 400);
 
-    // уменьшить ширину .contact__list-wrap
-    contactListWrap.classList.remove('contact__list-wrap--width-0-50');
-    contactListWrap.classList.add('contact__list-wrap--width-50-0');
-    function removeContactListWrap_50_0() {
-      contactListWrap.classList.remove('contact__list-wrap--width-50-0');
-    }
-    setTimeout(removeContactListWrap_50_0, 400);
+  /**======================= */
+  /*===ФУНКЦИИ*/
 
-    // изменить  содержимое .contact__header
-    addContactRight();
-
-    // увеличить ширину .me
-    me.classList.remove('me--width-50-0')
-    me.style.display = "";
-    me.classList.add('me--width-0-50');
-    function removeMeWidth_0_50() {
-      me.classList.remove('me--width-0-50');
-    }
-    setTimeout(removeMeWidth_0_50, 400);
-
-    // и удалить .active
-    contactHeaderWrap.classList.remove('active');
-
-  } else {
-    contact.classList.add('contact--width-50-100');
-    contactListWrap.classList.add('contact__list-wrap--width-0-50');
-    contactHeaderWrap.classList.add('active');
-    if (document.documentElement.clientWidth < 960) {
-      addBackRight();
-    };
-
-    me.classList.add('me--width-50-0');
-    function addMeDisplayNone() {
-      me.style.display = "none";
-    };
-    setTimeout(addMeDisplayNone, 400);
+  function addBackRight() {
+    contactHeader.innerHTML = "BACK";
   }
-}
 
-/*ФУНКЦИЯ клик на ME*/
-function clickMeHeaderWrap() {
-  if (me.classList.contains('me--width-50-100')) {
-    //уменьшить ширину .me
-    me.classList.remove('me--width-50-100');
-    me.classList.add('me--width-100-50');
-    function removeMeWidth_100_50() {
-      me.classList.remove('me--width-100-50');
-    }
-    setTimeout(removeMeWidth_100_50, 400);
+  function addBackleft() {
+    meHeader.innerHTML = "BACK";
+  }
 
-    // уменьшить ширину .me__list-wrap
-    meListWrap.classList.remove('me__list-wrap--width-0-50');
-    meListWrap.classList.add('me__list-wrap--width-50-0');
-    function removeMeListWrap_50_0() {
-      meListWrap.classList.remove('me__list-wrap--width-50-0');
-    }
-    setTimeout(removeMeListWrap_50_0, 400);
+  /*ФУНКЦИЯ заменить содержимое на BACK*/
+  const addBack = (self) => {
+    self.innerHTML = "BACK";
+  };
 
-    // изменить  содержимое .contact__header
-    addMeLeft();
+  function addContactRight() {
+    contactHeader.innerHTML = "CONTACT";
+  }
 
-    // увеличить ширину .contact
-    contact.classList.remove('contact--width-50-0');
-    contact.style.display = "";
-    contact.classList.add('contact--width-0-50');
-    function removeContactWidth_0_50() {
-      contact.classList.remove('contact--width-0-50');
-    }
-    setTimeout(removeContactWidth_0_50, 400);
+  function addMeLeft() {
+    meHeader.innerHTML = "ME";
+  }
 
-    // удалить .active и модификатор &--width-0-50
-    meHeaderWrap.classList.remove('active');
+  /**!!!!!!==========*/
+  /*ФУНКЦИЯ скрыть .me__header-wrap*/
+  function hideMeHeaderWrap() {
     meHeaderWrap.classList.remove('me__header-wrap--width-0-50');
-
-  } else {
-    me.classList.add('me--width-50-100');
-    meListWrap.classList.add('me__list-wrap--width-0-50');
-    meHeaderWrap.classList.add('active');
-    if (document.documentElement.clientWidth < 960) {
-      addBackleft();
-    };
-
-    contact.classList.add('contact--width-50-0');
-    function addContactDisplayNone() {
-      contact.style.display = "none";
-    };
-    setTimeout(addContactDisplayNone, 400);
+    meHeaderWrap.classList.add('me__header-wrap--width-50-0');
   }
-}
 
-/**======================= */
-/*===СОБЫТИЕ - клик на CONTACT (.contact__header-wrap)*/
-contactHeaderWrap.addEventListener('click', function () {
-  clickContactHeaderWrap();
-});
-
-contactHeaderWrap.addEventListener('mouseover', function () {
-  if (this.classList.contains('active')) {
-    addBackRight();
-  } else {
-    addContactRight();
+  /*ФУНКЦИЯ показать .me__header-wrap*/
+  function showMeHeaderWrap() {
+    meHeaderWrap.classList.remove('me__header-wrap--width-50-0');
+    meHeaderWrap.classList.add('me__header-wrap--width-0-50');
   }
-});
 
-contactHeaderWrap.addEventListener('mouseout', function () {
-  if (this.classList.contains('active')) {
-    addContactRight();
+  /*ФУНКЦИЯ показать .me__wrapper*/
+  const meWrapper = me.querySelector('.me__wrapper');
+  function showMeWrapper() {
+    meWrapper.classList.add('me__wrapper--show'); //показать .me__wrapper
+    meList.classList.add('me__list--border'); // изменить border
   }
-});
 
-/**======================= */
-/*===СОБЫТИЕ - клик на ME*/
-meHeaderWrap.addEventListener('click', function () {
-  clickMeHeaderWrap();
-});
-
-meHeaderWrap.addEventListener('mouseover', function () {
-  if (this.classList.contains('active')) {
-    addBackleft();
-  } else {
-    addMeLeft();
+  /*ФУНКЦИЯ скрыть .me__wrapper*/
+  function hideMeWrapper() {
+    meWrapper.classList.remove('me__wrapper--show'); //скрыть .me__wrapper
+    meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
   }
-});
-
-meHeaderWrap.addEventListener('mouseout', function () {
-  if (this.classList.contains('active')) {
-    addMeLeft();
-  }
-});
 
 
-/**======================= */
-/*===СОБЫТИЕ - клик на .me__link--skills*/
-let meLinkSkills = meList.querySelector('.me__link--skills');
-
-meLinkSkills.addEventListener('click', function () {
-  if (this.innerHTML === 'BACK') {
-    hideMeWrapper();
-    showMeHeaderWrap();
-    this.classList.remove('me__link--active'); //удалить .me__link--active
-    this.innerHTML = 'SKILLS'; //изменить BACK на SKILLS
-  } else {
-    hideMeHeaderWrap();
-    showMeWrapper();
-
-    removeActive();
-    this.classList.add('me__link--active'); //добавить .me__link--active
-
-    //для $mob-width изменить содержимое на BACK
-    if (document.documentElement.clientWidth < 960) {
-      addBack(this);
-    }
-  }
-});
-
-//изменить содержимое на BACK
-meLinkSkills.addEventListener('mouseover', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "BACK";
-  }
-});
-
-//изменить содержимое на SKILLS
-meLinkSkills.addEventListener('mouseout', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "SKILLS";
-  }
-});
-
-/**======================= */
-/*===клик на .me__link--card-list*/
-let meLinkCard = meList.querySelector('.me__link--card-list');
-
-meLinkCard.addEventListener('click', function () {
-  if (this.innerHTML === 'BACK') {
-    hideMeWrapper();
-    showMeHeaderWrap();
-    this.classList.remove('me__link--active'); //удалить .me__link--active
-    this.innerHTML = 'WORK'; //изменить BACK на Work
-  } else {
-    hideMeHeaderWrap();
-    showMeWrapper();
-
-    removeActive();
-    this.classList.add('me__link--active'); //добавить .me__link--active
-
-    //для $mob-width изменить содержимое на BACK
-    if (document.documentElement.clientWidth < 960) {
-      addBack(this);
-    }
-  }
-});
-
-//изменить содержимое на BACK
-meLinkCard.addEventListener('mouseover', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "BACK";
-  }
-});
-
-//изменить содержимое на PORTFILIO
-meLinkCard.addEventListener('mouseout', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "WORK";
-  }
-});
-
-/**======================= */
-/*===клик на .me__link--edu*/
-let meLinkEdu = meList.querySelector('.me__link--edu');
-
-meLinkEdu.addEventListener('click', function () {
-  if (this.innerHTML === 'BACK') {
-    hideMeWrapper();
-    showMeHeaderWrap();
-    this.classList.remove('me__link--active'); //удалить .me__link--active
-    this.innerHTML = 'Education'; //изменить BACK на Education
-  } else {
-    hideMeHeaderWrap();
-    showMeWrapper();
-
-    removeActive();
-    this.classList.add('me__link--active'); //добавить .me__link--active
-
-    //для $mob-width изменить содержимое на BACK
-    if (document.documentElement.clientWidth < 960) {
-      addBack(this);
-    }
-  }
-});
-
-//изменить содержимое на BACK
-meLinkEdu.addEventListener('mouseover', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "BACK";
-  }
-});
-
-//изменить содержимое на EDUCATION
-meLinkEdu.addEventListener('mouseout', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "EDUCATION";
-  }
-});
-
-/**======================= */
-/*===клик на .me__link--about*/
-let meLinkAbout = meList.querySelector('.me__link--about');
-let video1 = document.querySelectorAll('.video__wrap')[0],
-  video2 = document.querySelectorAll('.video__wrap')[1];
-
-meLinkAbout.addEventListener('click', function () {
-  if (this.innerHTML === 'BACK') {
-    hideMeWrapper();
-    showMeHeaderWrap();
-    this.classList.remove('me__link--active'); //удалить .me__link--active
+  /*ФУНКЦИЯ удалить .me__link--ххх*/
+  function removeActive() {
+    meLinkSkills.classList.remove('me__link--active'); //удалить .me__link--active для Skills
+    meLinkCard.classList.remove('me__link--active'); //удалить .me__link--active для Card
+    meLinkEdu.classList.remove('me__link--active'); //удалить .me__link--active для Edu
+    meLinkAbout.classList.remove('me__link--active'); //удалить .me__link--active для About
     video1.pause();
     video2.pause();
+  }
 
-    this.innerHTML = 'About'; //изменить BACK на ABOUT
-  } else {
-    hideMeHeaderWrap();
-    showMeWrapper();
-    removeActive();
-    this.classList.add('me__link--active'); //добавить .me__link--active
+  /*ФУНКЦИЯ клик на CONTACT*/
+  function clickContactHeaderWrap() {
+    if (contact.classList.contains('contact--width-50-100')) {
+      // уменьшить ширину .contact
+      contact.classList.remove('contact--width-50-100');
+      contact.classList.add('contact--width-100-50');
+      function removeContactWidth_100_50() {
+        contact.classList.remove('contact--width-100-50');
+      }
+      setTimeout(removeContactWidth_100_50, 400);
 
-    //для $mob-width изменить содержимое на BACK
-    if (document.documentElement.clientWidth < 960) {
-      addBack(this);
+      // уменьшить ширину .contact__list-wrap
+      contactListWrap.classList.remove('contact__list-wrap--width-0-50');
+      contactListWrap.classList.add('contact__list-wrap--width-50-0');
+      function removeContactListWrap_50_0() {
+        contactListWrap.classList.remove('contact__list-wrap--width-50-0');
+      }
+      setTimeout(removeContactListWrap_50_0, 400);
+
+      // изменить  содержимое .contact__header
+      addContactRight();
+
+      // увеличить ширину .me
+      me.classList.remove('me--width-50-0')
+      me.style.display = "";
+      me.classList.add('me--width-0-50');
+      function removeMeWidth_0_50() {
+        me.classList.remove('me--width-0-50');
+      }
+      setTimeout(removeMeWidth_0_50, 400);
+
+      // и удалить .active
+      contactHeaderWrap.classList.remove('active');
+
+    } else {
+      contact.classList.add('contact--width-50-100');
+      contactListWrap.classList.add('contact__list-wrap--width-0-50');
+      contactHeaderWrap.classList.add('active');
+      if (document.documentElement.clientWidth < 960) {
+        addBackRight();
+      }
+
+      me.classList.add('me--width-50-0');
+      function addMeDisplayNone() {
+        me.style.display = "none";
+      }
+      setTimeout(addMeDisplayNone, 400);
     }
   }
-});
 
-//изменить содержимое на BACK
-meLinkAbout.addEventListener('mouseover', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "BACK";
-  }
-});
+  /*ФУНКЦИЯ клик на ME*/
+  function clickMeHeaderWrap() {
+    if (me.classList.contains('me--width-50-100')) {
+      //уменьшить ширину .me
+      me.classList.remove('me--width-50-100');
+      me.classList.add('me--width-100-50');
+      function removeMeWidth_100_50() {
+        me.classList.remove('me--width-100-50');
+      }
+      setTimeout(removeMeWidth_100_50, 400);
 
-//изменить содержимое на ABOUT
-meLinkAbout.addEventListener('mouseout', function () {
-  if (this.classList.contains('me__link--active') === true) {
-    this.innerHTML = "ABOUT";
+      // уменьшить ширину .me__list-wrap
+      meListWrap.classList.remove('me__list-wrap--width-0-50');
+      meListWrap.classList.add('me__list-wrap--width-50-0');
+      function removeMeListWrap_50_0() {
+        meListWrap.classList.remove('me__list-wrap--width-50-0');
+      }
+      setTimeout(removeMeListWrap_50_0, 400);
+
+      // изменить  содержимое .contact__header
+      addMeLeft();
+
+      // увеличить ширину .contact
+      contact.classList.remove('contact--width-50-0');
+      contact.style.display = "";
+      contact.classList.add('contact--width-0-50');
+      function removeContactWidth_0_50() {
+        contact.classList.remove('contact--width-0-50');
+      }
+      setTimeout(removeContactWidth_0_50, 400);
+
+      // удалить .active и модификатор &--width-0-50
+      meHeaderWrap.classList.remove('active');
+      meHeaderWrap.classList.remove('me__header-wrap--width-0-50');
+
+    } else {
+      me.classList.add('me--width-50-100');
+      meListWrap.classList.add('me__list-wrap--width-0-50');
+      meHeaderWrap.classList.add('active');
+      if (document.documentElement.clientWidth < 960) {
+        addBackleft();
+      }
+
+      contact.classList.add('contact--width-50-0');
+      function addContactDisplayNone() {
+        contact.style.display = "none";
+      }
+      setTimeout(addContactDisplayNone, 400);
+    }
   }
+
+  /**======================= */
+  /*===СОБЫТИЕ - клик на CONTACT (.contact__header-wrap)*/
+  contactHeaderWrap.addEventListener('click', function () {
+    clickContactHeaderWrap();
+  });
+
+  contactHeaderWrap.addEventListener('mouseover', function () {
+    if (this.classList.contains('active')) {
+      addBackRight();
+    } else {
+      addContactRight();
+    }
+  });
+
+  contactHeaderWrap.addEventListener('mouseout', function () {
+    if (this.classList.contains('active')) {
+      addContactRight();
+    }
+  });
+
+  /**======================= */
+  /*===СОБЫТИЕ - клик на ME*/
+  meHeaderWrap.addEventListener('click', function () {
+    clickMeHeaderWrap();
+  });
+
+  meHeaderWrap.addEventListener('mouseover', function () {
+    if (this.classList.contains('active')) {
+      addBackleft();
+    } else {
+      addMeLeft();
+    }
+  });
+
+  meHeaderWrap.addEventListener('mouseout', function () {
+    if (this.classList.contains('active')) {
+      addMeLeft();
+    }
+  });
+
+
+  /**======================= */
+  /*===СОБЫТИЕ - клик на .me__link--skills*/
+  const meLinkSkills = meList.querySelector('.me__link--skills');
+
+  meLinkSkills.addEventListener('click', function () {
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'SKILLS'; //изменить BACK на SKILLS
+    } else {
+      hideMeHeaderWrap();
+      showMeWrapper();
+
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkSkills.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на SKILLS
+  meLinkSkills.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "SKILLS";
+    }
+  });
+
+  /**======================= */
+  /*===клик на .me__link--card-list*/
+  const meLinkCard = meList.querySelector('.me__link--card-list');
+
+  meLinkCard.addEventListener('click', function () {
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'WORK'; //изменить BACK на Work
+    } else {
+      hideMeHeaderWrap();
+      showMeWrapper();
+
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkCard.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на PORTFILIO
+  meLinkCard.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "WORK";
+    }
+  });
+
+  /**======================= */
+  /*===клик на .me__link--edu*/
+  const meLinkEdu = meList.querySelector('.me__link--edu');
+
+  meLinkEdu.addEventListener('click', function () {
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'Education'; //изменить BACK на Education
+    } else {
+      hideMeHeaderWrap();
+      showMeWrapper();
+
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkEdu.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на EDUCATION
+  meLinkEdu.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "EDUCATION";
+    }
+  });
+
+  /**======================= */
+  /*===клик на .me__link--about*/
+  const meLinkAbout = meList.querySelector('.me__link--about'),
+    video1 = document.querySelectorAll('.video__wrap')[0],
+    video2 = document.querySelectorAll('.video__wrap')[1];
+
+  meLinkAbout.addEventListener('click', function () {
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      video1.pause();
+      video2.pause();
+
+      this.innerHTML = 'About'; //изменить BACK на ABOUT
+    } else {
+      hideMeHeaderWrap();
+      showMeWrapper();
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkAbout.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на ABOUT
+  meLinkAbout.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "ABOUT";
+    }
+  });
 });
