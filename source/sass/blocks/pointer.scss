@@ -1,0 +1,9 @@
+.pointer {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  pointer-events: none;
+  background: rgba(44, 44, 44, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 0 100px 100px rgba(44, 44, 44, 0.5);
+}
