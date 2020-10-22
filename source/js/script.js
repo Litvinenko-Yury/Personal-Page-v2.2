@@ -1,7 +1,6 @@
 'use strict';
 
 /**=== script modal-innerHTML.js ===*/
-
 document.addEventListener('DOMContentLoaded', () => {
   const contact = document.querySelector('.contact'),
     me = document.querySelector('.me');
