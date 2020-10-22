@@ -1,23 +1,23 @@
 //"use strict";
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var plumber = require("gulp-plumber");
-var sourcemap = require("gulp-sourcemaps");
-var postcss = require("gulp-postcss");
-var autoprefixer = require("autoprefixer");
-var server = require("browser-sync").create();
-var csso = require("gulp-csso");
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var webp = require("gulp-webp");
-var svgstore = require("gulp-svgstore");
-var posthtml = require("gulp-posthtml");
-var include = require("posthtml-include");
-var del = require("del");
-var htmlmin = require("gulp-htmlmin");
-var concat = require('gulp-concat');
-let uglify = require('gulp-uglify-es').default;
+const gulp = require("gulp");
+const sass = require("gulp-sass"); // компиляция из sass в css
+const plumber = require("gulp-plumber"); // формирует вывод об ошибке. Но при этом работа Gulp не прерывается.
+const sourcemap = require("gulp-sourcemaps"); //в браузере, в инструментах разработчика, показывает измененный контент(код) в первоначальном виде.
+const postcss = require('gulp-postcss'); //плагин для преобразования итогового css-код, подключает другие плагины для работы. Как и posthtml.
+const autoprefixer = require('autoprefixer'); // ставит префиксы
+const server = require("browser-sync").create(); //локальный сервер. автообновление страницы
+const csso = require("gulp-csso"); // минификация css
+const rename = require("gulp-rename"); // переименовывает файлы
+const imagemin = require("gulp-imagemin"); // оптимизация PNG-JPEG-SVG
+const webp = require("gulp-webp"); // создает webp из jpeg
+const svgstore = require("gulp-svgstore"); // собирает svg спрайт
+const posthtml = require("gulp-posthtml"); // шаблонизатор для html, занимается видоизменением html-файлов. Как и postcss.
+const include = require("posthtml-include"); // плагин для posthtml, добавляет новый тег <include>, инлайним svg-sprite
+const del = require("del");
+const htmlmin = require("gulp-htmlmin");
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify-es').default;
 const ghPages = require('gh-pages');
 const path = require('path');
 
@@ -49,15 +49,13 @@ gulp.task("css", function () {
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
-    .pipe(postcss([
-      autoprefixer()
-    ]))
+    .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest("build/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
-  // .pipe(server.stream());
+    .pipe(server.stream());
 });
 
 //собрать svg-спрайт (gulp-svgstore), переименовать спрайт в "svg_sprite.svg" (gulp-rename), и сохранить в build/img/vector.
