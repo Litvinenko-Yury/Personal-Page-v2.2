@@ -1,8 +1,6 @@
-'use strict';
-
 /**=== script modal-innerHTML.js ===*/
 /**======================= */
-document.addEventListener('DOMContentLoaded', () => {
+function modal() {
   const eduImgWrap = document.querySelector('.education__img-wrap'),
     modalOverlay = document.querySelector('.modal-overlay');
 
@@ -22,15 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeModal() {
     const modalContent = document.querySelector('.modal-content');
-    modalContent.remove();
-    modalOverlay.classList.remove('modal-overlay--show');
+    if (modalContent) {
+      modalContent.remove();
+      modalOverlay.classList.remove('modal-overlay--show');
+    }
   }
 
 
   /*=============================*/
   /*Показать модальное окно:*/
   /*события по клику на img-preview*/
-  eduImgWrap.onclick = function (event) {
+  eduImgWrap.addEventListener('click', function (event) {
     let target = event.target; // где был клик?
 
     if (target.classList.contains('education__img--1')) {
@@ -42,18 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
       showModal();
       showModalContent2();
     }
-  };
+  });
+
 
   /*=============================*/
   /*1-Закрыть модальное окно:*/
   /*события по клику на изображение*/
-  document.onclick = function (event) {
+  document.addEventListener('click', function (event) {
     let target = event.target; // где был клик?
 
     if (target.classList.contains('modal-content')) {
       closeModal();
     }
-  };
+  });
 
   /*2-Закрыть модальное окно:*/
   /*события по клику на затененный фон*/
@@ -64,8 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /*3-Закрыть модальное окно:*/
   /*события по нажатию ESC*/
   window.addEventListener("keydown", function (event) {
-    if (event.keyCode === 27) {
+    if (event.key === "Escape") {
+      closeModal();
+    } else if (event.keyCode === 27) {
       closeModal();
     }
   });
-});
+}
+
+export default modal;

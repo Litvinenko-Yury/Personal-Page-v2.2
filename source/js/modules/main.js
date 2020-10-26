@@ -1,7 +1,5 @@
-'use strict';
-
 /**=== script modal-innerHTML.js ===*/
-document.addEventListener('DOMContentLoaded', () => {
+function main() {
   const contact = document.querySelector('.contact'),
     me = document.querySelector('.me');
 
@@ -386,4 +384,5 @@ document.addEventListener('DOMContentLoaded', () => {
       this.innerHTML = "ABOUT";
     }
   });
-});
+}
+export default main;
