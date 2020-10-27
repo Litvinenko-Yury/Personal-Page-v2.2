@@ -9,7 +9,7 @@ function navigator() {
   if (isInternetExplorer() === false) {
     console.log('Браузер не IE');
   } else {
-    console.log('Сочувствую, но ваш браузер IE');
+    console.log('Я большой поклонник винтажных вещей, но ваш браузер слишком старомоден. Текущая версия вашего браузера устарела. Установите браузер Microsoft Edge последней версии.');
   }
 }
 
