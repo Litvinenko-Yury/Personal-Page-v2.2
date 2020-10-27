@@ -1,4 +1,6 @@
-/**=== script modal-innerHTML.js ===*/
+/**======================= */
+/*главный скрипт*/
+
 function main() {
   const contact = document.querySelector('.contact'),
     me = document.querySelector('.me');
@@ -16,19 +18,8 @@ function main() {
 
 
   /**======================= */
-  /*Добавить/убрать GLITCH по hover на ME*/
-  const glitch = document.querySelector('.glitch');
-  me.addEventListener('mouseover', () => {
-    glitch.classList.remove('glitch');
-  });
-  me.addEventListener('mouseout', () => {
-    glitch.classList.add('glitch');
-  });
-
-
   /**======================= */
-  /*===ФУНКЦИИ*/
-
+  /*===ФУНКЦИИ===*/
   function addBackRight() {
     contactHeader.innerHTML = "BACK";
   }
@@ -37,10 +28,9 @@ function main() {
     meHeader.innerHTML = "BACK";
   }
 
-  /*ФУНКЦИЯ заменить содержимое на BACK*/
-  const addBack = (self) => {
-    self.innerHTML = "BACK";
-  };
+  function addBack(a) {
+    a.innerHTML = "BACK";
+  }
 
   function addContactRight() {
     contactHeader.innerHTML = "CONTACT";
@@ -50,7 +40,6 @@ function main() {
     meHeader.innerHTML = "ME";
   }
 
-  /**!!!!!!==========*/
   /*ФУНКЦИЯ скрыть .me__header-wrap*/
   function hideMeHeaderWrap() {
     meHeaderWrap.classList.remove('me__header-wrap--width-0-50');
@@ -75,7 +64,6 @@ function main() {
     meWrapper.classList.remove('me__wrapper--show'); //скрыть .me__wrapper
     meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
   }
-
 
   /*ФУНКЦИЯ удалить .me__link--ххх*/
   function removeActive() {
@@ -188,8 +176,11 @@ function main() {
     }
   }
 
+
   /**======================= */
-  /*===СОБЫТИЕ - клик на CONTACT (.contact__header-wrap)*/
+  /**===СОБЫТИЯ=========== */
+  /**======================= */
+  /*===СОБЫТИЕ - на CONTACT (.contact__header-wrap)*/
   contactHeaderWrap.addEventListener('click', function () {
     clickContactHeaderWrap();
   });
@@ -209,7 +200,7 @@ function main() {
   });
 
   /**======================= */
-  /*===СОБЫТИЕ - клик на ME*/
+  /*===СОБЫТИЕ -  на ME*/
   meHeaderWrap.addEventListener('click', function () {
     clickMeHeaderWrap();
   });
@@ -230,7 +221,7 @@ function main() {
 
 
   /**======================= */
-  /*===СОБЫТИЕ - клик на .me__link--skills*/
+  /*===СОБЫТИЕ - на .me__link--skills*/
   const meLinkSkills = meList.querySelector('.me__link--skills');
 
   meLinkSkills.addEventListener('click', function () {
@@ -268,7 +259,7 @@ function main() {
   });
 
   /**======================= */
-  /*===клик на .me__link--card-list*/
+  /*===СОБЫТИЕ - на .me__link--card-list*/
   const meLinkCard = meList.querySelector('.me__link--card-list');
 
   meLinkCard.addEventListener('click', function () {
@@ -306,7 +297,7 @@ function main() {
   });
 
   /**======================= */
-  /*===клик на .me__link--edu*/
+  /*====СОБЫТИЕ на .me__link--edu*/
   const meLinkEdu = meList.querySelector('.me__link--edu');
 
   meLinkEdu.addEventListener('click', function () {
@@ -344,7 +335,7 @@ function main() {
   });
 
   /**======================= */
-  /*===клик на .me__link--about*/
+  /*===СОБЫТИЕ на .me__link--about*/
   const meLinkAbout = meList.querySelector('.me__link--about'),
     video1 = document.querySelectorAll('.video__wrap')[0],
     video2 = document.querySelectorAll('.video__wrap')[1];

@@ -16,8 +16,6 @@ const posthtml = require("gulp-posthtml"); // шаблонизатор для ht
 const include = require("posthtml-include"); // плагин для posthtml, добавляет новый тег <include>, инлайним svg-sprite
 const del = require("del"); // библиотека для удаления файлов/папок
 const htmlmin = require("gulp-htmlmin");  // минификация HTML
-//const concat = require('gulp-concat'); // коннкатенация файлов, не нужно. убрать. это будет делать webpack
-//const uglify = require('gulp-uglify-es').default; // минификация js
 const webpack = require('webpack-stream'); // webpack
 const ghPages = require('gh-pages'); // публикация файлов на gh-pages
 const path = require('path'); // его использует 'gh-pages'
@@ -85,20 +83,6 @@ gulp.task("minify_html", function () {
     .pipe(gulp.dest("build"));
 });
 
-// //конкатенация и минификация js-файлов
-// gulp.task("minify_js", function () {
-//   return gulp.src([
-//     "source/js/*.js",
-//     "!source/js/ofi.min.js",
-//     "!source/js/picturefill.min.js"
-//   ])
-//     .pipe(concat('script.min.js'))
-//     .pipe(sourcemap.init())
-//     .pipe(uglify())
-//     .pipe(sourcemap.write())
-//     .pipe(gulp.dest("build/js"));
-// });
-
 //webapck
 gulp.task('webpack', function () {
   return gulp.src('source/js/entry.js')
@@ -125,7 +109,7 @@ gulp.task("refresh", function (done) {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
   gulp.watch("source/img/icon-*.svg", gulp.series("svg_sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("webpack", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("webpack", "refresh"));
 });
 
 
