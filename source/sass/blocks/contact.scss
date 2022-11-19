@@ -82,7 +82,8 @@
 
   /*=======*/
   &--width-0-50 {
-    display: flex !important; /* stylelint-disable-line */
+    display: flex !important;
+    /* stylelint-disable-line */
     justify-content: center;
     align-items: center;
 
@@ -92,7 +93,8 @@
   @include width-from0-to50;
 
   &--width-50-0 {
-    display: flex !important; /* stylelint-disable-line */
+    display: flex !important;
+    /* stylelint-disable-line */
     justify-content: center;
     align-items: center;
 
@@ -158,6 +160,11 @@
   &--no-pointer {
     cursor: auto;
   }
+}
+
+.contact__text {
+  font-size: 0.5em;
+  line-height: 1.1em;
 }
 
 .contact__content {
