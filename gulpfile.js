@@ -58,6 +58,7 @@ gulp.task("css", function () {
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
+
 });
 
 //собрать svg-спрайт (gulp-svgstore), переименовать спрайт в "svg-sprite.svg" (gulp-rename), и сохранить в build/img/vector.
@@ -104,16 +105,17 @@ gulp.task("server", function () {
   });
 
 
-gulp.task("refresh", function (done) {
-  //используем browser-sync для перезапуска страницы
-  server.reload();
-  done();
-});
+  gulp.task("refresh", function (done) {
+    //используем browser-sync для перезапуска страницы
+    server.reload();
+    done();
+  });
 
-gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
-gulp.watch("source/img/icon-*.svg", gulp.series("doSvgSprite", "html", "refresh"));
-gulp.watch("source/*.html", gulp.series("html", "refresh"));
-gulp.watch("source/js/**/*.js", gulp.series("webpack", "refresh"));
+  gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css", "refresh"));
+  gulp.watch("source/sass/blocks/*.{scss,sass}", gulp.series("css", "refresh"));
+  gulp.watch("source/img/icon-*.svg", gulp.series("doSvgSprite", "html", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("webpack", "refresh"));
 });
 
 
