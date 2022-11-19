@@ -1,15 +1,15 @@
-/**===Функция определения браузера Internet Explorer===*/
+/**===Browser detection function: Internet Explorer===*/
 function navigator() {
   function isInternetExplorer() {
     return window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
   }
 
-  console.log(window.navigator.userAgent);
+  // console.log(window.navigator.userAgent);
 
   if (isInternetExplorer() === false) {
-    console.log('Браузер не IE');
+    console.log('Browser not IE');
   } else {
-    console.log('Я большой поклонник винтажных вещей, но ваш браузер слишком старомоден. Текущая версия вашего браузера устарела. Установите браузер Microsoft Edge последней версии.');
+    console.log('I\'m a big fan of vintage stuff, but your browser is too old. Install the latest Microsoft Edge browser.');
   }
 }
 
