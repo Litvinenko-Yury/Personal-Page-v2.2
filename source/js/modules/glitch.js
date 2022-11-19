@@ -1,4 +1,3 @@
-/**======================= */
 /*Добавить/убрать GLITCH по hover на ME*/
 function glitch() {
   const me = document.querySelector('.me');

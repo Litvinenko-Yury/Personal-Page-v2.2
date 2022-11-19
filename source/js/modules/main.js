@@ -2,19 +2,243 @@
 /*main script*/
 
 function main() {
+
+
+
   const contact = document.querySelector('.contact');
+  const contactHeaderWrap =  contact.querySelector('.contact__header-wrap');
+  const contactHeader =  contact.querySelector('.contact__header');
+  const contactListWrap =  contact.querySelector('.contact__list-wrap');
+
   const me = document.querySelector('.me');
+  const meHeaderWrap = me.querySelector('.me__header-wrap');
+  const meHeader = me.querySelector('.me__header');
+  const meListWrap = me.querySelector('.me__list-wrap');
+  const meList = me.querySelector('.me__list');
+  const skills = me.querySelector('#skills');
+  const cardsList = me.querySelector('#list');
+  const education = me.querySelector('#edu');
+  const about = me.querySelector('#about');
 
-  const contactHeaderWrap = document.querySelector('.contact__header-wrap');
-  const meHeaderWrap = document.querySelector('.me__header-wrap');
 
-  const contactHeader = document.querySelector('.contact__header');
-  const meHeader = document.querySelector('.me__header');
+  /**===Events===*/
+  /*events - на CONTACT (.contact__header-wrap)*/
+  contactHeaderWrap.addEventListener('pointerdown', function () {
+    clickContactHeaderWrap();
+  });
 
-  const contactListWrap = document.querySelector('.contact__list-wrap');
-  const meListWrap = document.querySelector('.me__list-wrap');
+  contactHeaderWrap.addEventListener('mouseover', function () {
+    if (this.classList.contains('active')) {
+      addBackRight();
+    } else {
+      addContactRight();
+    }
+  });
 
-  const meList = document.querySelector('.me__list');
+  contactHeaderWrap.addEventListener('mouseout', function () {
+    if (this.classList.contains('active')) {
+      addContactRight();
+    }
+  });
+
+  /*events -  на ME*/
+  meHeaderWrap.addEventListener('pointerdown', function () {
+    clickMeHeaderWrap();
+  });
+
+  meHeaderWrap.addEventListener('mouseover', function () {
+    if (this.classList.contains('active')) {
+      addBackleft();
+    } else {
+      addMeLeft();
+    }
+  });
+
+  meHeaderWrap.addEventListener('mouseout', function () {
+    if (this.classList.contains('active')) {
+      addMeLeft();
+    }
+  });
+
+  /***/
+  /*events - на .me__link--skills*/
+  const meLinkSkills = meList.querySelector('.me__link--skills');
+  meLinkSkills.addEventListener('pointerdown', function () {
+    console.log('me__link--skills');
+
+    cardsList.classList.remove('list--show');
+    education.classList.remove('education--show');
+    about.classList.remove('about--show');
+
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'SKILLS'; //изменить BACK на SKILLS
+      skills.classList.remove('skills--show');
+    } else {
+      skills.classList.add('skills--show');
+      hideMeHeaderWrap();
+      showMeWrapper();
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkSkills.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на SKILLS
+  meLinkSkills.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "SKILLS";
+    }
+  });
+
+  /***/
+  /*events - на .me__link--card-list*/
+  const meLinkCard = meList.querySelector('.me__link--card-list');
+  meLinkCard.addEventListener('pointerdown', function () {
+    console.log('me__link--work');
+
+    skills.classList.remove('skills--show');
+    education.classList.remove('education--show');
+    about.classList.remove('about--show');
+
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'WORK'; //изменить BACK на Work
+      cardsList.classList.remove('cards-list--show');
+    } else {
+      cardsList.classList.add('cards-list--show');
+      hideMeHeaderWrap();
+      showMeWrapper();
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkCard.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на PORTFILIO
+  meLinkCard.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "WORK";
+    }
+  });
+
+
+  /***/
+  /*events на .me__link--edu*/
+  const meLinkEdu = meList.querySelector('.me__link--edu');
+  meLinkEdu.addEventListener('pointerdown', function () {
+    console.log('me__link--edu');
+
+    skills.classList.remove('skills--show');
+    cardsList.classList.remove('list--show');
+    about.classList.remove('about--show');
+
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'Education'; //изменить BACK на Education
+      education.classList.remove('education--show');
+    } else {
+      education.classList.add('education--show');
+      hideMeHeaderWrap();
+      showMeWrapper();
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkEdu.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на EDUCATION
+  meLinkEdu.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "EDUCATION";
+    }
+  });
+
+
+  /***/
+  /*events на .me__link--about*/
+  const meLinkAbout = meList.querySelector('.me__link--about');
+  meLinkAbout.addEventListener('pointerdown', function () {
+    console.log('me__link--about');
+
+    skills.classList.remove('skills--show');
+    cardsList.classList.remove('list--show');
+    education.classList.remove('education--show');
+
+    console.log(this);
+
+    if (this.innerHTML === 'BACK') {
+      hideMeWrapper();
+      showMeHeaderWrap();
+      this.classList.remove('me__link--active'); //удалить .me__link--active
+      this.innerHTML = 'About'; //изменить BACK на ABOUT
+      about.classList.remove('about--show');
+    } else {
+      about.classList.add('about--show');
+      hideMeHeaderWrap();
+      showMeWrapper();
+      removeActive();
+      this.classList.add('me__link--active'); //добавить .me__link--active
+
+      //для $mob-width изменить содержимое на BACK
+      if (document.documentElement.clientWidth < 960) {
+        addBack(this);
+      }
+    }
+  });
+
+  //изменить содержимое на BACK
+  meLinkAbout.addEventListener('mouseover', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "BACK";
+    }
+  });
+
+  //изменить содержимое на ABOUT
+  meLinkAbout.addEventListener('mouseout', function () {
+    if (this.classList.contains('me__link--active') === true) {
+      this.innerHTML = "ABOUT";
+    }
+  });
 
 
   /*===Functions===*/
@@ -63,7 +287,7 @@ function main() {
     meList.classList.remove('me__list--border'); // изменить border в первоначальное состояние
   }
 
-  /*удалить .me__link--ххх*/
+  /*удалить .me__link--*  */
   function removeActive() {
     meLinkSkills.classList.remove('me__link--active'); //remove .me__link--active для Skills
     meLinkCard.classList.remove('me__link--active'); //remove .me__link--active для Card
@@ -172,193 +396,5 @@ function main() {
     }
   }
 
-
-  /**===Events===*/
-  /*events - на CONTACT (.contact__header-wrap)*/
-  contactHeaderWrap.addEventListener('pointerdown', function () {
-    clickContactHeaderWrap();
-  });
-
-  contactHeaderWrap.addEventListener('mouseover', function () {
-    if (this.classList.contains('active')) {
-      addBackRight();
-    } else {
-      addContactRight();
-    }
-  });
-
-  contactHeaderWrap.addEventListener('mouseout', function () {
-    if (this.classList.contains('active')) {
-      addContactRight();
-    }
-  });
-
-  /*events -  на ME*/
-  meHeaderWrap.addEventListener('pointerdown', function () {
-    clickMeHeaderWrap();
-  });
-
-  meHeaderWrap.addEventListener('mouseover', function () {
-    if (this.classList.contains('active')) {
-      addBackleft();
-    } else {
-      addMeLeft();
-    }
-  });
-
-  meHeaderWrap.addEventListener('mouseout', function () {
-    if (this.classList.contains('active')) {
-      addMeLeft();
-    }
-  });
-
-
-  /*events - на .me__link--skills*/
-  const meLinkSkills = meList.querySelector('.me__link--skills');
-  meLinkSkills.addEventListener('pointerdown', function () {
-    if (this.innerHTML === 'BACK') {
-      hideMeWrapper();
-      showMeHeaderWrap();
-      this.classList.remove('me__link--active'); //удалить .me__link--active
-      this.innerHTML = 'SKILLS'; //изменить BACK на SKILLS
-    } else {
-      hideMeHeaderWrap();
-      showMeWrapper();
-
-      removeActive();
-      this.classList.add('me__link--active'); //добавить .me__link--active
-
-      //для $mob-width изменить содержимое на BACK
-      if (document.documentElement.clientWidth < 960) {
-        addBack(this);
-      }
-    }
-  });
-
-  //изменить содержимое на BACK
-  meLinkSkills.addEventListener('mouseover', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "BACK";
-    }
-  });
-
-  //изменить содержимое на SKILLS
-  meLinkSkills.addEventListener('mouseout', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "SKILLS";
-    }
-  });
-
-
-  /*events - на .me__link--card-list*/
-  const meLinkCard = meList.querySelector('.me__link--card-list');
-  meLinkCard.addEventListener('pointerdown', function () {
-    if (this.innerHTML === 'BACK') {
-      hideMeWrapper();
-      showMeHeaderWrap();
-      this.classList.remove('me__link--active'); //удалить .me__link--active
-      this.innerHTML = 'WORK'; //изменить BACK на Work
-    } else {
-      hideMeHeaderWrap();
-      showMeWrapper();
-
-      removeActive();
-      this.classList.add('me__link--active'); //добавить .me__link--active
-
-      //для $mob-width изменить содержимое на BACK
-      if (document.documentElement.clientWidth < 960) {
-        addBack(this);
-      }
-    }
-  });
-
-  //изменить содержимое на BACK
-  meLinkCard.addEventListener('mouseover', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "BACK";
-    }
-  });
-
-  //изменить содержимое на PORTFILIO
-  meLinkCard.addEventListener('mouseout', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "WORK";
-    }
-  });
-
-
-  /*events на .me__link--edu*/
-  const meLinkEdu = meList.querySelector('.me__link--edu');
-  meLinkEdu.addEventListener('pointerdown', function () {
-    if (this.innerHTML === 'BACK') {
-      hideMeWrapper();
-      showMeHeaderWrap();
-      this.classList.remove('me__link--active'); //удалить .me__link--active
-      this.innerHTML = 'Education'; //изменить BACK на Education
-    } else {
-      hideMeHeaderWrap();
-      showMeWrapper();
-
-      removeActive();
-      this.classList.add('me__link--active'); //добавить .me__link--active
-
-      //для $mob-width изменить содержимое на BACK
-      if (document.documentElement.clientWidth < 960) {
-        addBack(this);
-      }
-    }
-  });
-
-  //изменить содержимое на BACK
-  meLinkEdu.addEventListener('mouseover', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "BACK";
-    }
-  });
-
-  //изменить содержимое на EDUCATION
-  meLinkEdu.addEventListener('mouseout', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "EDUCATION";
-    }
-  });
-
-
-  /*events на .me__link--about*/
-  const meLinkAbout = meList.querySelector('.me__link--about');
-  meLinkAbout.addEventListener('pointerdown', function () {
-    if (this.innerHTML === 'BACK') {
-      hideMeWrapper();
-      showMeHeaderWrap();
-      this.classList.remove('me__link--active'); //удалить .me__link--active
-
-
-      this.innerHTML = 'About'; //изменить BACK на ABOUT
-    } else {
-      hideMeHeaderWrap();
-      showMeWrapper();
-      removeActive();
-      this.classList.add('me__link--active'); //добавить .me__link--active
-
-      //для $mob-width изменить содержимое на BACK
-      if (document.documentElement.clientWidth < 960) {
-        addBack(this);
-      }
-    }
-  });
-
-  //изменить содержимое на BACK
-  meLinkAbout.addEventListener('mouseover', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "BACK";
-    }
-  });
-
-  //изменить содержимое на ABOUT
-  meLinkAbout.addEventListener('mouseout', function () {
-    if (this.classList.contains('me__link--active') === true) {
-      this.innerHTML = "ABOUT";
-    }
-  });
 }
 export default main;

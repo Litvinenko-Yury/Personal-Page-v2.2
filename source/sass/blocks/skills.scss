@@ -1,6 +1,7 @@
 .skills {
   @include scrollbar;
 
+  display: none;
   min-height: 100%;
   padding: 0.75rem;
   overflow-x: hidden;
@@ -15,6 +16,10 @@
     @include padding-desktop;
     overflow-x: auto;
   }
+}
+
+.skills--show {
+  display: block;
 }
 
 .skills__list {

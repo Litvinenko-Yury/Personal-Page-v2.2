@@ -1,6 +1,7 @@
 .cards-list {
   @include scrollbar;
 
+  display: none;
   height: 100%;
   padding: 0.75rem;
   overflow-x: hidden;
@@ -15,6 +16,10 @@
     @include padding-desktop;
     overflow-x: auto;
   }
+}
+
+.cards-list--show {
+  display: block;
 }
 
 .cards-list__wrapper {

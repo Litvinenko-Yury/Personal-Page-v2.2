@@ -1,6 +1,7 @@
 .about {
   @include scrollbar;
 
+  display: none;
   min-height: 100%;
   padding: 0.75rem;
   overflow-x: hidden;
@@ -15,6 +16,10 @@
     @include padding-desktop;
     overflow-x: auto;
   }
+}
+
+.about--show {
+  display: block;
 }
 
 .about__title {
@@ -39,7 +44,7 @@
 }
 
 .about__wrapper-inner {
-outline: 1px dotted red;
+  outline: 1px dotted red;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -52,7 +57,8 @@ outline: 1px dotted red;
   margin: 0 auto;
   margin-top: 1rem;
   object-fit: cover;
-  font-family: "object-fit: contain;"; /* stylelint-disable-line */
+  font-family: "object-fit: contain;";
+  /* stylelint-disable-line */
   border-radius: 50%;
 
   @media (min-width: $tablet-width) {

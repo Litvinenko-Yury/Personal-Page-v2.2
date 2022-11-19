@@ -1,3 +1,5 @@
+'use strict';
+
 import glitch from './modules/glitch';
 import main from './modules/main';
 import modal from './modules/modal-innerHTML';
