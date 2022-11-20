@@ -2,9 +2,6 @@
 /*main script*/
 
 function main() {
-
-
-
   const contact = document.querySelector('.contact');
   const contactHeaderWrap =  contact.querySelector('.contact__header-wrap');
   const contactHeader =  contact.querySelector('.contact__header');

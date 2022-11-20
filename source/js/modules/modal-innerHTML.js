@@ -1,8 +1,8 @@
 /**=== script modal-innerHTML.js ===*/
 /**======================= */
 function modal() {
-  const eduImgWrap = document.querySelector('.education__img-wrap'),
-    modalOverlay = document.querySelector('.modal-overlay');
+  const eduImgWrap = document.querySelector('.education__img-wrap');
+  const modalOverlay = document.querySelector('.modal-overlay');
 
 
   /**===================== */
@@ -15,7 +15,11 @@ function modal() {
   }
 
   function showModalContent2() {
-    modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/img-certificate-2-1080@1x.jpg' loading='lazy' alt='Certificate №1'>");
+    modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/img-certificate-2-1080@1x.jpg' loading='lazy' alt='Certificate №2'>");
+  }
+
+  function showModalContent3() {
+    modalOverlay.insertAdjacentHTML('afterEnd', "<img class='modal-content' src='img/rastr/img-certificate-3-1080@1x.jpg' loading='lazy' alt='Certificate №3'>");
   }
 
   function closeModal() {
@@ -33,14 +37,20 @@ function modal() {
   eduImgWrap.addEventListener('click', function (event) {
     let target = event.target; // где был клик?
 
-    if (target.classList.contains('education__img--1')) {
+
+    if (target.getAttribute('id') === 'educationImg1') {
       showModal();
       showModalContent1();
     }
 
-    if (target.classList.contains('education__img--2')) {
+    if (target.getAttribute('id') === 'educationImg2') {
       showModal();
       showModalContent2();
+    }
+
+    if (target.getAttribute('id') === 'educationImg3') {
+      showModal();
+      showModalContent3();
     }
   });
 
