@@ -3,7 +3,7 @@
 
   display: none;
   min-height: 100%;
-  padding: 0.75rem;
+  padding: 0.6rem;
   overflow-x: hidden;
 
   color: $text-color;
@@ -23,7 +23,6 @@
 }
 
 .about__title {
-  margin-bottom: 4rem;
   font-size: 1.25rem;
   text-align: center;
   letter-spacing: 0.1rem;
@@ -33,6 +32,7 @@
   }
 
   @media (min-width: $desktop-width) {
+    margin-bottom: 3rem;
     font-size: 4rem;
   }
 }
@@ -48,7 +48,17 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding-left: 50px;
+  margin-top: 2rem;
+
+  @media (min-width: $tablet-width) {
+    width: 200px;
+    // height: 200px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: auto;
+    padding-left: 50px;
+  }
 }
 
 .about__img {
@@ -75,12 +85,10 @@
   display: block;
   width: 100%;
   margin: 0 auto;
-  margin-top: 1rem;
   font-size: 1rem;
   font-weight: 300;
 
   @media (min-width: $tablet-width) {
-    width: 50%;
     font-size: 1.25rem;
   }
 
@@ -96,8 +104,24 @@
 
 .about__text {
   display: block;
-  margin-top: 2rem;
-  font-size: 1.25em;
-  line-height: 1.5em;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.25em;
   font-weight: 300;
+
+  @media (min-width: $tablet-width) {
+
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+
+
+
+
+
+
+
 }
