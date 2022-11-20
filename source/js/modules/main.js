@@ -61,8 +61,6 @@ function main() {
   /*events - на .me__link--skills*/
   const meLinkSkills = meList.querySelector('.me__link--skills');
   meLinkSkills.addEventListener('pointerdown', function () {
-    console.log('me__link--skills');
-
     cardsList.classList.remove('list--show');
     education.classList.remove('education--show');
     about.classList.remove('about--show');
@@ -105,8 +103,6 @@ function main() {
   /*events - на .me__link--card-list*/
   const meLinkCard = meList.querySelector('.me__link--card-list');
   meLinkCard.addEventListener('pointerdown', function () {
-    console.log('me__link--work');
-
     skills.classList.remove('skills--show');
     education.classList.remove('education--show');
     about.classList.remove('about--show');
@@ -150,8 +146,6 @@ function main() {
   /*events на .me__link--edu*/
   const meLinkEdu = meList.querySelector('.me__link--edu');
   meLinkEdu.addEventListener('pointerdown', function () {
-    console.log('me__link--edu');
-
     skills.classList.remove('skills--show');
     cardsList.classList.remove('list--show');
     about.classList.remove('about--show');
@@ -195,13 +189,9 @@ function main() {
   /*events на .me__link--about*/
   const meLinkAbout = meList.querySelector('.me__link--about');
   meLinkAbout.addEventListener('pointerdown', function () {
-    console.log('me__link--about');
-
     skills.classList.remove('skills--show');
     cardsList.classList.remove('list--show');
     education.classList.remove('education--show');
-
-    console.log(this);
 
     if (this.innerHTML === 'BACK') {
       hideMeWrapper();
