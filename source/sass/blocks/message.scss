@@ -5,25 +5,27 @@
   bottom: 10px;
   transform: translateX(-50%);
   display: none;
-  width: fit-content;
+  width: 350px;
 
   text-align: center;
   color: $color-main--hover;
 
 
-  &--show {
-    display: block;
+  @media (min-width: $desktop-width) {
+    &--show {
+      display: block;
+    }
   }
 }
 
 .message__title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.2em;
 }
 
 .message__text {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.2em;
 
   &--strike {
