@@ -1,4 +1,4 @@
-# Personal Page v2
-Примечания к проекту.
+# Personal Page v2.2
+Project notes.
 
-1. Собранный проект на gh-pages:  https://litvinenko-yury.pro
+1. Assembled project on gh-pages:  https://litvinenko-yury.pro

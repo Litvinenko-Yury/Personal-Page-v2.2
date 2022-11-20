@@ -21,8 +21,8 @@ const webpack = require('webpack-stream'); // webpack
 
 // const htmlmin = require("gulp-htmlmin");  // минификация HTML
 
-// const ghPages = require('gh-pages'); // публикация файлов на gh-pages
-// const path = require('path'); // его использует 'gh-pages'
+const ghPages = require('gh-pages'); // публикация файлов на gh-pages
+const path = require('path'); // его использует 'gh-pages'
 
 
 //удаляем папку build.
