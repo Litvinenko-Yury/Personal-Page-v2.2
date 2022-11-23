@@ -14,7 +14,7 @@ function showMessage() {
 
   meHeaderWrap.addEventListener('mouseout', () => {
     if (document.querySelector('.me__header-wrap').classList.contains('active')) {
-      console.log('if message.classList.contains(active)');
+      // console.log('if message.classList.contains(active)');
       message.classList.remove('message--show');
     }
   })
